@@ -1,10 +1,11 @@
+import Layout from "../layout/Layout"
 import LoginContainer from "../containers/LoginContainer"
 
 function LoginPage() {
   return (
-    <div>
+    <Layout>
       <LoginContainer />
-    </div>
+    </Layout>
   )
 }
 

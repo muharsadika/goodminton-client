@@ -14,7 +14,7 @@ function RegisterContainer() {
           </div>
           {/* Right: Login Form */}
           <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-            <h1 className="text-2xl font-semibold mb-4">Login</h1>
+            <h1 className="text-2xl font-semibold mb-4">Register</h1>
             <form action="#" method="POST">
               {/* Fullname Input */}
               <div className="mb-4">

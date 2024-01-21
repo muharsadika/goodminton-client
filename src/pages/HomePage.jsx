@@ -1,10 +1,11 @@
+import Layout from "../layout/Layout"
 import HomeContainer from "../containers/HomeContainer"
 
 function HomePage() {
   return (
-    <div>
+    <Layout>
       <HomeContainer />
-    </div>
+    </Layout>
   )
 }
 
