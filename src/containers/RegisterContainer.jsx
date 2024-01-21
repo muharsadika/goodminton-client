@@ -7,7 +7,7 @@ function RegisterContainer() {
           {/* Left: Image */}
           <div className="w-1/2 h-screen hidden lg:block">
             <img
-              src="https://placehold.co/800x/667fff/ffffff.png?text=Your+Image&font=Montserrat"
+              src="https://vsmash.com/wp-content/uploads/2023/08/web-player2.webp"
               alt="Placeholder Image"
               className="object-cover w-full h-full"
             />
