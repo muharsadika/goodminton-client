@@ -68,36 +68,19 @@ function RegisterContainer() {
                   autoComplete="off"
                 />
               </div>
-              {/* Remember Me Checkbox */}
-              <div className="mb-4 flex items-center">
-                <input
-                  type="checkbox"
-                  id="remember"
-                  name="remember"
-                  className="text-blue-500"
-                />
-                <label htmlFor="remember" className="text-gray-600 ml-2">
-                  Remember Me
-                </label>
-              </div>
-              {/* Forgot Password Link */}
-              <div className="mb-6 text-blue-500">
-                <a href="#" className="hover:underline">
-                  Forgot Password?
-                </a>
-              </div>
-              {/* Login Button */}
+              {/* Register Button */}
               <button
                 type="submit"
                 className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
               >
-                Login
+                Register
               </button>
             </form>
             {/* Sign up  Link */}
-            <div className="mt-6 text-blue-500 text-center">
-              <a href="#" className="hover:underline">
-                Sign up Here
+            <div className="mt-6 text-center">
+              <p>already have an account? </p>
+              <a href="/login" className="hover:underline text-blue-500">
+                Sign in
               </a>
             </div>
           </div>

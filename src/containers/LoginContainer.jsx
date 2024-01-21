@@ -69,8 +69,9 @@ function LoginContainer() {
               </button>
             </form>
             {/* Sign up  Link */}
-            <div className="mt-6 text-blue-500 text-center">
-              <a href="#" className="hover:underline">
+            <div className="mt-6 text-center">
+              <p>Don’t have an account?</p>
+              <a href="/register" className="hover:underline text-blue-500">
                 Sign up Here
               </a>
             </div>
