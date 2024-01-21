@@ -1,7 +1,10 @@
 
 function Footer() {
   return (
-    <div>Footer</div>
+    <div className="bg-green-700 text-white">
+      Footer
+
+    </div>
   )
 }
 

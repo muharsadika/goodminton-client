@@ -1,6 +1,8 @@
 function HomeContainer() {
   return (
-    <div>HomeContainer</div>
+    <div className="bg-green-700 text-white">
+      HomeContainer
+    </div>
   )
 }
 
