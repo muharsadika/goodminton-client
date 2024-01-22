@@ -5,7 +5,7 @@ function CardMainCategories() {
     <>
       <div className="flex flex-col justify-center items-center gap-[2px]">
         <div>
-          <p className="text-xl font-bold text-center">MAIN CATEGORIES</p>
+          <p className="text-lg font-bold">MAIN CATEGORIES</p>
         </div>
         <div className="flex gap-[2px] justify-between">
           <div className="flex flex-col rounded-md shadow-md justify-between gap-[2px]">
