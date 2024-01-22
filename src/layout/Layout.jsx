@@ -17,7 +17,7 @@ function Layout({ children }) {
         </div>
 
         <div
-          className="w-full min-h-screen mt-28"
+          // className="w-full min-h-screen mt-28"
         >
 
           {children}

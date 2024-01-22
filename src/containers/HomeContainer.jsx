@@ -1,7 +1,11 @@
+import HomeCard1 from "./CardMainCategories"
+
 function HomeContainer() {
   return (
-    <div className="bg-green-700 text-white">
-      HomeContainer
+    <div className="w-full min-h-screen mt-28">
+      <div>
+        <HomeCard1 />
+      </div>
     </div>
   )
 }

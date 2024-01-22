@@ -2,39 +2,24 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    // <div className="navbar bg-slate-100">
-    //   <div className="navbar-start">
-    //     <Link className="btn btn-ghost text-xl">daisyUI</Link>
-    //   </div>
-    //   <div className="navbar-center hidden lg:flex">
-    //     <ul className="menu menu-horizontal px-1">
-    //       <li><Link>RACKET</Link></li>
-    //       <li><Link>STRING</Link></li>
-    //       <li><Link>SHIRT</Link></li>
-    //     </ul>
-    //   </div>
-    //   <div className="navbar-end">
-    //     <Link className="btn">Button</Link>
-    //   </div>
-
-    <div className="navbar bg-base-100 flex">
-      <div className="w-[25%]" style={{ border: "1px solid red" }}>
+    <div className="navbar bg-slate-100 flex">
+      <div className="w-[25%]">
         <Link className="btn btn-ghost text-xl">daisyUI</Link>
       </div>
-      <div className="w-[50%] justify-center hidden lg:flex" style={{ border: "1px solid red" }}>
+      <div className="w-[50%] justify-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/login">RACKET</Link>
+            <Link to="/">RACKET</Link>
           </li>
           <li>
-            <Link to="/login">STRING</Link>
+            <Link to="/">STRING</Link>
           </li>
           <li>
-            <Link to="/login">SHIRT</Link>
+            <Link to="/">SHIRT</Link>
           </li>
         </ul>
       </div>
-      <div className="w-[25%] justify-end pr-12" style={{ border: "1px solid red" }}>
+      <div className="w-[25%] justify-end pr-12">
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
