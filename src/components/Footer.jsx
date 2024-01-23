@@ -3,23 +3,14 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="footer p-10 bg-slate-100 text-base-content">
-      <nav>
-        <header className="footer-title">Services</header>
-        <a className="link link-hover">Branding</a>
-        <a className="link link-hover">Design</a>
-        <a className="link link-hover">Marketing</a>
-        <a className="link link-hover">Advertisement</a>
-      </nav>
-      <nav>
-        <header className="footer-title">Company</header>
+    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+      <nav className="grid grid-flow-col gap-4">
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
         <a className="link link-hover">Jobs</a>
         <a className="link link-hover">Press kit</a>
       </nav>
       <nav>
-        <header className="footer-title">Social</header>
         <div className="grid grid-flow-col gap-4">
           <Link to="https://www.instagram.com/">
             <FaInstagramSquare className="w-7 h-7" />
@@ -35,6 +26,9 @@ function Footer() {
           </Link>
         </div>
       </nav>
+      <aside>
+        <p>Copyright © 2024 - All right reserved by GOODMINTON Industries Ltd</p>
+      </aside>
     </footer>
   )
 }
