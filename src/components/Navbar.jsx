@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <div className="navbar bg-slate-100 flex">
+    <div className="navbar flex bg-[#111] text-white">
       <div className="w-[25%]">
         <Link className="btn btn-ghost text-xl">daisyUI</Link>
       </div>
