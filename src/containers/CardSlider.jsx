@@ -17,10 +17,10 @@ const CardSlider = () => {
   };
 
   const photos = [
-    'https://vsmash.com/wp-content/uploads/2024/01/nf-nextage-website-banner.jpg',
+    '/src/assets/images/card-main-category/nf-nextage-website-banner.jpg',
     'https://vsmash.com/wp-content/uploads/2023/08/1000z-launch-website-banner.webp',
-    'https://vsmash.com/wp-content/uploads/2023/11/800pro-website-banner-launch.jpg',
-    'https://vsmash.com/wp-content/uploads/2023/12/cascade-accel-website-banner.jpg',
+    '/src/assets/images/card-main-category/800pro-website-banner-launch.jpg',
+    '/src/assets/images/card-main-category/cascade-accel-website-banner.jpg',
   ];
 
   return (
