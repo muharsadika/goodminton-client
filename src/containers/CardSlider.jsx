@@ -1,3 +1,41 @@
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
+const CardSlider = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    pauseOnHover: true,
+    centerMode: true,
+    centerPadding: '0',
+  };
+
+  const photos = [
+    'https://vsmash.com/wp-content/uploads/2024/01/nf-nextage-website-banner.jpg',
+    'https://vsmash.com/wp-content/uploads/2023/08/1000z-launch-website-banner.webp',
+    'https://vsmash.com/wp-content/uploads/2023/11/800pro-website-banner-launch.jpg',
+  ];
+
+  return (
+    <Slider {...settings} className='w-[1520px] m-auto'>
+      {photos.map((photo, index) => (
+        <div key={index}>
+          <img src={photo} alt={`Slide ${index + 1}`} />
+        </div>
+      ))}
+    </Slider>
+  );
+};
+
+export default CardSlider;
+
+
 // import { useState } from "react";
 // import Slider from "react-slick";
 // import "slick-carousel/slick/slick.css";
@@ -81,51 +119,51 @@
 // export default CardSlider;
 
 
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+// import Slider from 'react-slick';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
 
-const CardSlider = () => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
-    pauseOnHover: true,
-    centerMode: true,
-    centerPadding: '0',
-  };
+// const CardSlider = () => {
+//   const settings = {
+//     dots: true,
+//     infinite: true,
+//     speed: 500,
+//     slidesToShow: 1,
+//     slidesToScroll: 1,
+//     autoplay: true,
+//     autoplaySpeed: 5000,
+//     pauseOnHover: true,
+//     centerMode: true,
+//     centerPadding: '0',
+//   };
 
-  const photos = [
-    'https://vsmash.com/wp-content/uploads/2024/01/nf-nextage-website-banner.jpg',
-    'https://vsmash.com/wp-content/uploads/2023/08/1000z-launch-website-banner.webp',
-    'https://vsmash.com/wp-content/uploads/2023/11/800pro-website-banner-launch.jpg',
-    // Add more photo URLs as needed
-  ];
+//   const photos = [
+//     'https://vsmash.com/wp-content/uploads/2024/01/nf-nextage-website-banner.jpg',
+//     'https://vsmash.com/wp-content/uploads/2023/08/1000z-launch-website-banner.webp',
+//     'https://vsmash.com/wp-content/uploads/2023/11/800pro-website-banner-launch.jpg',
+//     // Add more photo URLs as needed
+//   ];
 
-  return (
-    <Slider {...settings}
-      // style={{ maxWidth: '1520px', margin: 'auto' }}
-      className='w-[1520px] m-auto'
-    >
-      {photos.map((photo, index) => (
-        <div key={index} style={{ textAlign: 'center' }}>
-          <img
-            src={photo}
-            alt={`Slide ${index + 1}`}
-          // style={{ maxWidth: '100%', maxHeight: '1520px', margin: '0 auto' }}
-          // className='w-[1520px] m-auto'
-          />
-        </div>
-      ))}
-    </Slider>
-  );
-};
+//   return (
+//     <Slider {...settings}
+//       // style={{ maxWidth: '1520px', margin: 'auto' }}
+//       className='w-[1520px] m-auto'
+//     >
+//       {photos.map((photo, index) => (
+//         <div key={index} style={{ textAlign: 'center' }}>
+//           <img
+//             src={photo}
+//             alt={`Slide ${index + 1}`}
+//           // style={{ maxWidth: '100%', maxHeight: '1520px', margin: '0 auto' }}
+//           // className='w-[1520px] m-auto'
+//           />
+//         </div>
+//       ))}
+//     </Slider>
+//   );
+// };
 
-export default CardSlider;
+// export default CardSlider;
 
 
 
