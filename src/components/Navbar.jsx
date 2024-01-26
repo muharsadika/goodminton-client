@@ -22,10 +22,10 @@ function Navbar() {
           </li>
         </ul>
       </div>
-      <div className="w-[25%] justify-end pr-12 gap-3">
+      <div className="w-[25%] justify-end pr-12 gap-3" onClick={() => setDropdownOpen(!isDropdownOpen)}>
+        {/* === CART === */}
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-
             {/* === CART LOGO === */}
             <div className="indicator">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -34,37 +34,31 @@ function Navbar() {
               <span className="badge badge-sm indicator-item">8</span>
             </div>
             {/* === END CART LOGO === */}
-
           </div>
-          <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
-            <div className="card-body text-black">
-              <span className="font-bold text-lg">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
-              <div className="card-actions">
-                <button className="btn btn-primary btn-block">View cart</button>
+          {/* === CART DROPDOWN === */}
+          {isDropdownOpen && (
+            <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow">
+              <div className="card-body text-black">
+                <span className="font-bold text-lg">8 Items</span>
+                <span className="text-info">Subtotal: $999</span>
+                <div className="card-actions">
+                  <button className="btn btn-primary btn-block">View cart</button>
+                </div>
               </div>
             </div>
-          </div>
+          )}
+          {/* === END CART DROPDOWN === */}
         </div>
+        {/* === END CART === */}
+        {/* === PROFILE === */}
         <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-            onClick={() => setDropdownOpen(!isDropdownOpen)}
-          >
+          <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar" onClick={() => setDropdownOpen(!isDropdownOpen)} >
             <div className="w-20 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
+              <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
             </div>
           </div>
           {isDropdownOpen && (
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black gap-2"
-            >
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black gap-2" >
               <li>
                 <Link className="justify-between">
                   Profile
@@ -80,7 +74,7 @@ function Navbar() {
             </ul>
           )}
         </div>
-
+        {/* === END PROFILE === */}
       </div>
     </div>
   )
