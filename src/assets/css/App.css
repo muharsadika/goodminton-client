@@ -2,6 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Add this to your CSS or SCSS file */
+.slider-container {
+  position: relative;
+}
+
+.slider-wrapper {
+  width: 1520px; /* Add your desired width */
+  margin: auto;
+}
+
+.slick-dots {
+  position: absolute;
+  bottom: -20px; /* Adjust the value to move the dots higher or lower */
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.slick-dots li {
+  margin: 0 5px;
+}
+
+.slick-dots li.slick-active button {
+  color: #00f; /* Adjust the color of the active dot */
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
