@@ -1,6 +1,6 @@
 function CardFilter() {
   return (
-    <div>CardFilter</div>
+    <div className="">CardFilter</div>
   )
 }
 
