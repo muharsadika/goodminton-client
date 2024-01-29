@@ -9,7 +9,7 @@ import {
 import LoginPage from "../pages/LoginPage";
 import HomePage from "../pages/HomePage";
 import RegisterPage from "../pages/RegisterPage";
-import DetailRacket from "../pages/DetailRacket";
+import Racket from "../pages/Racket";
 
 
 function RoutePage() {
@@ -26,7 +26,7 @@ function RoutePage() {
       <Routes>
         {/* <Route path="/" element={<IsNotLogin />}> */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/detail-racket" element={<DetailRacket />} />
+        <Route path="/racket" element={<Racket />} />
         {/* </Route> */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
