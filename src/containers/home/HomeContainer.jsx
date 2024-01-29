@@ -1,12 +1,12 @@
-import CardMainCategories from "./CardMainCategories"
-import CardNewArrival from "./CardNewArrival"
-import CardPlayerCollection from "./CardPlayerCollection"
-import CardSlider from "./CardSlider"
+import CardMainCategories from "./parts/CardMainCategories"
+import CardNewArrival from "./parts/CardNewArrival"
+import CardPlayerCollection from "./parts/CardPlayerCollection"
+import CardSlider from "./parts/CardSlider"
 
 
 function HomeContainer() {
   return (
-    <div className="w-full min-h-screen mt-[68px]">
+    <>
       <div className="mb-20">
         <CardSlider />
       </div>
@@ -19,7 +19,7 @@ function HomeContainer() {
       <div className="mb-10">
         <CardPlayerCollection />
       </div>
-    </div>
+    </>
   )
 }
 

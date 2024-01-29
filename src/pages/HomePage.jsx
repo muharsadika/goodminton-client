@@ -1,5 +1,5 @@
 import Layout from "../layout/Layout"
-import HomeContainer from "../containers/HomeContainer"
+import HomeContainer from "../containers/home/HomeContainer"
 
 function HomePage() {
   return (
