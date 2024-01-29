@@ -3,12 +3,12 @@ import racketsData from '../../../libs/mocks/racket';
 import { Link } from 'react-router-dom';
 
 function RacketPage() {
-  const [visibleRackets, setVisibleRackets] = useState(8); // Menyimpan jumlah raket yang ditampilkan
+  const [visibleRackets, setVisibleRackets] = useState(8);
 
-  const remainingRackets = racketsData.length - visibleRackets; // Menghitung jumlah raket yang belum ditampilkan
+  const remainingRackets = racketsData.length - visibleRackets;
 
   const handleLoadMore = () => {
-    setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 8); // Menambahkan 8 raket ketika tombol "load more" ditekan
+    setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 8);
   };
 
   return (
@@ -23,7 +23,7 @@ function RacketPage() {
               <div className="flex justify-center">
                 <img src={racket.imageSrc} alt={racket.name} className="w-72" />
               </div>
-              <div className="flex flex-col m-auto text-center gap-1 text-md my-3">
+              <div className="flex flex-col m-auto text-center gap-1 text-md py-3">
                 <p className="font-bold">{racket.name}</p>
                 <p className="text-xs">{racket.color}</p>
                 <p className="">{racket.price}</p>
@@ -65,7 +65,7 @@ export default RacketPage;
 //             <div className="flex justify-center">
 //               <img src={racket.imageSrc} alt={racket.name} className="w-72" />
 //             </div>
-//             <div className="flex flex-col m-auto text-center gap-1 text-md my-3">
+//             <div className="flex flex-col m-auto text-center gap-1 text-md py-3">
 //               <p className="font-bold">{racket.name}</p>
 //               <p className="text-xs">{racket.color}</p>
 //               <p className="">{racket.price}</p>
@@ -168,7 +168,7 @@ export default RacketPage;
 //             <div className="" onClick={() => showRacketDetail(racket)}> {/* Menambahkan event onClick */}
 //               <img src={racket.imageSrc} alt={racket.name} className="w-72" />
 //             </div>
-//             <div className="flex flex-col m-auto text-center gap-1 text-md my-3">
+//             <div className="flex flex-col m-auto text-center gap-1 text-md py-3">
 //               <p className="font-bold">{racket.name}</p>
 //               <p className="text-xs">{racket.color}</p>
 //               <p className="">{racket.price}</p>

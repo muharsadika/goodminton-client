@@ -2,7 +2,7 @@ import CardRacketDetail from './parts/CardRacketDetail'
 
 function RacketDetailContainer() {
   return (
-    <div>
+    <div className="">
       <CardRacketDetail />
     </div>
   )
