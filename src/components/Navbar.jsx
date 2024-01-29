@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <div className="navbar flex bg-[#111] text-white">
       <div className="w-[25%]">
-        <Link className="btn btn-ghost text-xl">GOODMINTON</Link>
+        <Link to="/" className="btn btn-ghost text-xl">GOODMINTON</Link>
       </div>
       <div className="w-[50%] justify-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
