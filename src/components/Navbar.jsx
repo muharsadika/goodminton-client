@@ -12,7 +12,7 @@ function Navbar() {
       <div className="w-[50%] justify-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/">RACKET</Link>
+            <Link to="/racket">RACKET</Link>
           </li>
           <li>
             <Link to="/">STRING</Link>

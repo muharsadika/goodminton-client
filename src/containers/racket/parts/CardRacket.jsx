@@ -1,77 +1,25 @@
-import { Link } from "react-router-dom";
-import racketsData from "../../../libs/mocks/racket";
+import { useState } from 'react';
+import racketsData from '../../../libs/mocks/racket';
 
-function CardRacket() {
-  // const racketsData = [
-  //   {
-  //     id: 1,
-  //     name: "ARCSABER 7 PRO",
-  //     color: "GRAYISH PEARL",
-  //     price: "IDR 2.500.000",
-  //     imageSrc: "/src/assets/images/card-racket/yonex/jpg/arcsaber-7-pro.jpg"
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "ARCSABER 11 PRO",
-  //     color: "GRAYISH PEARL",
-  //     price: "IDR 2.500.000",
-  //     imageSrc: "/src/assets/images/card-racket/yonex/jpg/arcsaber-11-pro.jpg"
-  //   },
-  //   {
-  //     id: 3,
-  //     name: "ASTROX 88D PRO",
-  //     color: "GRAYISH PEARL",
-  //     price: "IDR 2.500.000",
-  //     imageSrc: "/src/assets/images/card-racket/yonex/jpg/astrox-88d-pro.jpg"
-  //   },
-  //   {
-  //     id: 4,
-  //     name: "ASTROX 88S PRO",
-  //     color: "GRAYISH PEARL",
-  //     price: "IDR 2.500.000",
-  //     imageSrc: "/src/assets/images/card-racket/yonex/jpg/astrox-88s-pro.jpg"
-  //   },
-  //   {
-  //     id: 5,
-  //     name: "ASTROX 99 PRO",
-  //     color: "GRAYISH PEARL",
-  //     price: "IDR 2.500.000",
-  //     imageSrc: "/src/assets/images/card-racket/yonex/jpg/astrox-99-pro.jpg"
-  //   },
-  //   {
-  //     id: 6,
-  //     name: "ASTROX 100 PRO",
-  //     color: "GRAYISH PEARL",
-  //     price: "IDR 2.500.000",
-  //     imageSrc: "/src/assets/images/card-racket/yonex/jpg/astrox-100-pro.jpg"
-  //   },
-  //   {
-  //     id: 7,
-  //     name: "NANOFLARE 800 PRO",
-  //     color: "GRAYISH PEARL",
-  //     price: "IDR 2.500.000",
-  //     imageSrc: "/src/assets/images/card-racket/yonex/jpg/nanoflare-800-pro.jpg"
-  //   },
-  //   {
-  //     id: 8,
-  //     name: "NANOFLARE 1000 Z",
-  //     color: "GRAYISH PEARL",
-  //     price: "IDR 2.500.000",
-  //     imageSrc: "/src/assets/images/card-racket/yonex/jpg/nanoflare-1000-z.jpg"
-  //   },
-  // ];
+function RacketPage() {
+  const [visibleRackets, setVisibleRackets] = useState(8); // Menyimpan jumlah raket yang ditampilkan
+
+  const remainingRackets = racketsData.length - visibleRackets; // Menghitung jumlah raket yang belum ditampilkan
+
+  const handleLoadMore = () => {
+    setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 8); // Menambahkan 8 raket ketika tombol "load more" ditekan
+  };
 
   return (
     <div className="flex flex-col gap-5">
       <div className="text-5xl font-bold">
-        <p>YONEX RACKETS</p>
+        <p>RACKET LIST</p>
       </div>
-      <div className="grid grid-cols-4 gap-x-10 gap-y-5">
-        {racketsData.map((racket, index) => (
-          <Link key={index} to={`/racket/${racket.id}`}>
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-5">
+        {racketsData.slice(0, visibleRackets).map((racket, index) => (
           <div key={index} className="flex flex-col border rounded-xl overflow-hidden">
             <div className="flex justify-center">
-              <img src={racket.imageSrc} alt={racket.name} className="w-60" />
+              <img src={racket.imageSrc} alt={racket.name} className="w-72" />
             </div>
             <div className="flex flex-col m-auto text-center gap-1 text-md my-3">
               <p className="font-bold">{racket.name}</p>
@@ -79,14 +27,60 @@ function CardRacket() {
               <p className="">{racket.price}</p>
             </div>
           </div>
-          </Link>
         ))}
+      </div>
+      {remainingRackets > 0 && (
+        <div className="flex justify-center mt-5">
+          <button onClick={handleLoadMore} className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800">Load More ({remainingRackets})</button>
+        </div>
+      )}
     </div>
-    </div >
   );
 }
 
-export default CardRacket;
+export default RacketPage;
+
+
+// import { useState } from 'react';
+// import racketsData from '../../../libs/mocks/racket';
+
+// function CardRacket() {
+//   const [visibleRackets, setVisibleRackets] = useState(8); // Menyimpan jumlah raket yang ditampilkan
+
+//   const handleLoadMore = () => {
+//     setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 8); // Menambahkan 8 raket ketika tombol "load more" ditekan
+//   };
+
+//   return (
+//     <div className="flex flex-col gap-5">
+//       <div className="text-5xl font-bold">
+//         <p>RACKET LIST</p>
+//       </div>
+//       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-5">
+//         {racketsData.slice(0, visibleRackets).map((racket, index) => (
+//           <div key={index} className="flex flex-col border rounded-xl overflow-hidden">
+//             <div className="flex justify-center">
+//               <img src={racket.imageSrc} alt={racket.name} className="w-72" />
+//             </div>
+//             <div className="flex flex-col m-auto text-center gap-1 text-md my-3">
+//               <p className="font-bold">{racket.name}</p>
+//               <p className="text-xs">{racket.color}</p>
+//               <p className="">{racket.price}</p>
+//             </div>
+//           </div>
+//         ))}
+//       </div>
+//       {visibleRackets < racketsData.length && (
+//         <div className="flex justify-center mt-5">
+//           <button onClick={handleLoadMore} className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800">Load More</button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default CardRacket;
+
 
 
 // import React, { useState } from 'react';

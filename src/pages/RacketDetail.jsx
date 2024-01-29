@@ -1,4 +1,4 @@
-import RacketDetailContainer from "../containers/racket/RacketDetailContainer"
+import RacketDetailContainer from "../containers/racketDetail/RacketDetailContainer"
 import Layout from "../layout/Layout"
 
 function RacketDetail() {
