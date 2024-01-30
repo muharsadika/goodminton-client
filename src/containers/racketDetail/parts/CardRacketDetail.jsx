@@ -11,12 +11,15 @@ function CardRacektDetail() {
 
   return (
     <div className="flex flex-row justify-center px-32 gap-10">
-      <div className="w-[50%] flex justify-center items-center" style={{ border: '1px solid red' }}>
+
+      <div className="w-[50%] flex justify-center items-center">
         <img src={racket.imageSrc} alt={racket.name} className="w-[100%]" />
       </div>
-      <div className="flex flex-col gap-10 py-3 w-[50%]" style={{ border: '1px solid red' }}>
+
+      <div className="flex flex-col gap-10 py-3 w-[50%]">
         <div className='flex flex-col gap-2 text-2xl'>
-          <p className="font-bold">{racket.name}
+          <p className="font-bold">
+            {racket.name}
           </p>
         </div>
         <div className='flex flex-col gap-2 text-md'>
@@ -82,6 +85,7 @@ function CardRacektDetail() {
           </p>
         </div>
       </div>
+
     </div>
   );
 }

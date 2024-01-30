@@ -21,7 +21,7 @@ function Footer() {
           <Link to="https://www.youtube.com/">
             <FaYoutube className="w-7 h-7" />
           </Link>
-          <Link to="https://www.facebook.com/">
+          <Link to="https://www.facebook.com/"> 
             <FaFacebookSquare className="w-7 h-7" />
           </Link>
         </div>

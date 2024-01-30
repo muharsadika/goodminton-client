@@ -15,7 +15,7 @@ function Breadcrump({ link, page }) {
   const racket = racketsData.find((racket) => racket.id === parseInt(id));
 
   return (
-    <div className="px-32 py-10 text-lg">
+    <div className="px-32 text-lg">
       <nav className="text-gray-500">
         <ol className="list-none p-0 inline-flex">
           <li className="flex items-center">

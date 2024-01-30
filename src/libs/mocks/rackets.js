@@ -18,6 +18,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'ARCSABER',
   },
   {
     id: 2,
@@ -35,6 +36,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'ARCSABER',
   },
   {
     id: 3,
@@ -52,6 +54,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'ASTROX',
   },
   {
     id: 4,
@@ -69,6 +72,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'ASTROX',
   },
   {
     id: 5,
@@ -86,6 +90,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'ASTROX',
   },
   {
     id: 6,
@@ -103,6 +108,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'ASTROX',
   },
   {
     id: 7,
@@ -120,6 +126,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'NANOFLARE',
   },
   {
     id: 8,
@@ -137,6 +144,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'NANOFLARE',
   },
   {
     id: 9,
@@ -155,6 +163,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'ASTROX',
   },
   {
     id: 10,
@@ -172,6 +181,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'ASTROX',
   },
   {
     id: 11,
@@ -189,6 +199,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'NANOFLARE',
   },
   {
     id: 12,
@@ -206,6 +217,7 @@ const racketsData = [
     Color: 'Grayish Pearl',
     MadeIn: 'Japan',
     ItemCode: 'ARC11-P',
+    Type: 'DUORA',
   },
 ];
 
