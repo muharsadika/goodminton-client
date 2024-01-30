@@ -27,8 +27,8 @@ function RoutePage() {
       <Routes>
         {/* <Route path="/" element={<IsNotLogin />}> */}
         <Route path="/" element={<HomePage />} />
-        <Route path="/racket" element={<Racket />} />
-        <Route path="/racket/:id" element={<RacketDetail />} />
+        <Route path="/rackets" element={<Racket />} />
+        <Route path="/rackets/:id" element={<RacketDetail />} />
         {/* </Route> */}
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />

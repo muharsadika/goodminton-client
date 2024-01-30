@@ -12,13 +12,13 @@ function RacketPage() {
   };
 
   return (
-    <div className="flex flex-col gap-5">
-      <div className="text-5xl font-bold">
-        <p>RACKET LIST</p>
+    <div className="flex flex-col gap-20">
+      <div className="text-5xl font-semibold">
+        <p>RACKET</p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-5">
         {racketsData.slice(0, visibleRackets).map((racket, index) => (
-          <Link to={`/racket/${racket.id}`} key={index}>
+          <Link to={`/rackets/${racket.id}`} key={index}>
             <div key={index} className="flex flex-col border rounded-xl overflow-hidden">
               <div className="flex justify-center">
                 <img src={racket.imageSrc} alt={racket.name} className="w-72" />
