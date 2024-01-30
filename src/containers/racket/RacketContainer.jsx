@@ -1,7 +1,7 @@
 import CardRacket from "./parts/CardRacket"
 import CardFilter from "./parts/CardFilter"
 
-function DetailContainer() {
+function RacketContainer() {
   return (
     <div className="flex flex-row gap-5 p-5">
       <div className="w-[20%]" style={{ border: "1px solid red"}}>
@@ -14,4 +14,4 @@ function DetailContainer() {
   )
 }
 
-export default DetailContainer
+export default RacketContainer

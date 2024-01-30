@@ -1,12 +1,12 @@
-import React from 'react'
-import StringDetailComponent from '../components/stringDetail/StringDetailComponent'
+import StringDetailContainer from "../containers/stringDetail/StringDetailContainer"
+import Layout from "../layout/Layout"
 
-function StringDetail() {
+function RacketDetail() {
   return (
-    <div>
-      <StringDetailComponent />
-    </div>
+    <Layout>
+      <StringDetailContainer />
+    </Layout>
   )
 }
 
-export default StringDetail
+export default RacketDetail

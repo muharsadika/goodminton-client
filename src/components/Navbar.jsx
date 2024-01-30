@@ -15,7 +15,7 @@ function Navbar() {
             <Link to="/rackets">RACKET</Link>
           </li>
           <li>
-            <Link to="/">STRING</Link>
+            <Link to="/strings">STRING</Link>
           </li>
           <li>
             <Link to="/">SHIRT</Link>

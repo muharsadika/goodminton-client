@@ -2,7 +2,7 @@ import { useState } from 'react';
 import racketsData from '../../../libs/mocks/rackets';
 import { Link } from 'react-router-dom';
 
-function RacketPage() {
+function CardRacket() {
   const [visibleRackets, setVisibleRackets] = useState(8);
 
   const remainingRackets = racketsData.length - visibleRackets;
@@ -41,7 +41,7 @@ function RacketPage() {
   );
 }
 
-export default RacketPage;
+export default CardRacket;
 
 
 // import { useState } from 'react';

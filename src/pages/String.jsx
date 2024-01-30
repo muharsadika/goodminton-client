@@ -1,12 +1,12 @@
-import React from 'react'
-import StringComponent from '../'
+import StringContainer from "../containers/string/StringContainer"
+import Layout from "../layout/Layout"
 
-function String() {
+function Racket() {
   return (
-    <div>
-      <StringComponent />
-    </div>
+    <Layout>
+      <StringContainer />
+    </Layout>
   )
 }
 
-export default String
+export default Racket
