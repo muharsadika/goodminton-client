@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import racketsData from '../../../libs/mocks/racket';
+import racketsData from '../../../libs/mocks/rackets';
 import { Link } from 'react-router-dom';
 
 function RacketPage() {

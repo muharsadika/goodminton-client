@@ -1,5 +1,5 @@
 import { useParams } from 'react-router-dom';
-import racketsData from '../../../libs/mocks/racket';
+import racketsData from '../../../libs/mocks/rackets';
 
 function CardRacektDetail() {
   const { id } = useParams();
@@ -11,10 +11,10 @@ function CardRacektDetail() {
 
   return (
     <div className="flex flex-row justify-center px-32 gap-10">
-      <div className="w-[50%]">
-        <img src={racket.imageSrc} alt={racket.name} className="w-auto" />
+      <div className="w-[50%] flex justify-center items-center" style={{ border: '1px solid red' }}>
+        <img src={racket.imageSrc} alt={racket.name} className="w-[100%]" />
       </div>
-      <div className="flex flex-col gap-10 py-3 w-[50%]">
+      <div className="flex flex-col gap-10 py-3 w-[50%]" style={{ border: '1px solid red' }}>
         <div className='flex flex-col gap-2 text-2xl'>
           <p className="font-bold">{racket.name}
           </p>
