@@ -1,11 +1,11 @@
-import CardBreadcrump from './parts/CardBreadcrump'
+import Breadcrump from '../../components/Breadcrump'
 import CardRacketDetail from './parts/CardRacketDetail'
 
 function RacketDetailContainer() {
   return (
     <div className="">
       <div>
-        <CardBreadcrump />
+        <Breadcrump link="/rackets" page="Rackets"/>
       </div>
       <div>
         <CardRacketDetail />
