@@ -10,7 +10,9 @@ function RacketContainer() {
     const { minPrice, maxPrice, name } = filters;
 
     let filtered = racketsData.filter(racket => {
-      const isPriceInRange = (minPrice === '' || parseFloat(racket.price) >= minPrice) &&
+      const isPriceInRange =
+        (minPrice === '' || parseFloat(racket.price) >= minPrice)
+        &&
         (maxPrice === '' || parseFloat(racket.price) <= maxPrice);
 
       const isNameMatch = !name || racket.name.toLowerCase().includes(name.toLowerCase());
@@ -24,7 +26,7 @@ function RacketContainer() {
 
   return (
     <div className="flex flex-row gap-5 p-5">
-      <div className="w-[20%]" style={{ border: "1px solid red" }}>
+      <div className="w-[20%]">
         <CardFilter onFilter={handleFilterChange} />
       </div>
       <div className="w-[80%]">
