@@ -7,13 +7,20 @@ function RacketContainer() {
   const [filteredRackets, setFilteredRackets] = useState(racketsData);
 
   const handleFilterChange = (filters) => {
-    const { minPrice, maxPrice } = filters;
-    const filtered = racketsData.filter(racket => {
-      return (minPrice === '' || parseFloat(racket.price) >= minPrice) &&
+    const { minPrice, maxPrice, name } = filters;
+
+    let filtered = racketsData.filter(racket => {
+      const isPriceInRange = (minPrice === '' || parseFloat(racket.price) >= minPrice) &&
         (maxPrice === '' || parseFloat(racket.price) <= maxPrice);
+
+      const isNameMatch = !name || racket.name.toLowerCase().includes(name.toLowerCase());
+
+      return isPriceInRange && isNameMatch;
     });
+
     setFilteredRackets(filtered);
   };
+
 
   return (
     <div className="flex flex-row gap-5 p-5">
@@ -26,5 +33,7 @@ function RacketContainer() {
     </div>
   )
 }
+
+
 
 export default RacketContainer;

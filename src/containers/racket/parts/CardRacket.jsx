@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types'; // Import PropTypes
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function CardRacket({ rackets }) {
@@ -41,7 +41,6 @@ function CardRacket({ rackets }) {
   );
 }
 
-// Menambahkan PropTypes untuk properti 'rackets'
 CardRacket.propTypes = {
   rackets: PropTypes.array.isRequired,
 };
