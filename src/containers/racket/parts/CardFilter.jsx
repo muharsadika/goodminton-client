@@ -6,35 +6,26 @@ function CardFilter({ onFilter }) {
   const [maxPrice, setMaxPrice] = useState('');
   const [name, setName] = useState('');
 
-  const applyFilter = () => {
-    const filteredData = {
-      minPrice: minPrice === '' ? '' : parseFloat(minPrice),
-      maxPrice: maxPrice === '' ? '' : parseFloat(maxPrice),
-      name: name.trim().toLowerCase() // Trim whitespace and convert to lowercase for case-insensitive search
-    };
-    onFilter(filteredData);
-  };
+  const handleApplyPriceFilter = () => {
+    if ((minPrice !== '' && isNaN(minPrice)) || (maxPrice !== '' && isNaN(maxPrice))) {
+      alert('Please enter valid prices.');
+      return;
+    }
 
-  const handleMinPriceChange = (e) => {
-    setMinPrice(e.target.value);
-    applyFilter();
-  };
-
-  const handleMaxPriceChange = (e) => {
-    setMaxPrice(e.target.value);
-    applyFilter();
+    onFilter({ minPrice: parseFloat(minPrice), maxPrice: parseFloat(maxPrice), name });
   };
 
   const handleNameChange = (e) => {
     setName(e.target.value);
-    applyFilter();
+    onFilter({ minPrice: '', maxPrice: '', name: e.target.value });
   };
 
   return (
     <div className="flex flex-col gap-3" style={{ border: "1px solid red" }}>
+
       <h2 className="text-lg font-semibold">FILTER BY:</h2>
 
-      <div className="flex gap-3 justify-between" style={{ border: "5px solid pink" }}>
+      <div className="flex gap-3 justify-between overflow-y-auto" style={{ border: "5px solid pink" }}>
         <input
           type="text"
           placeholder="Search by Product Name"
@@ -49,17 +40,21 @@ function CardFilter({ onFilter }) {
           type="text"
           placeholder="Min Price"
           value={minPrice}
-          onChange={handleMinPriceChange}
+          onChange={(e) => setMinPrice(e.target.value)}
           className="border rounded-md p-2"
         />
         <input
           type="text"
           placeholder="Max Price"
           value={maxPrice}
-          onChange={handleMaxPriceChange}
+          onChange={(e) => setMaxPrice(e.target.value)}
           className="border rounded-md p-2"
         />
+        <button onClick={handleApplyPriceFilter} className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800">
+          Apply Price Filter
+        </button>
       </div>
+
     </div>
   );
 }
