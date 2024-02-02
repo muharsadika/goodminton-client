@@ -25,7 +25,7 @@ function RacketContainer() {
 
 
   return (
-    <div className="flex flex-row gap-5 p-5">
+    <div className="flex flex-row gap-5 py-20 px-20">
       <div className="w-[20%]">
         <CardFilter onFilter={handleFilterChange} />
       </div>

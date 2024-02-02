@@ -29,7 +29,7 @@ function CardFilter({ onFilter }) {
   };
 
   return (
-    <div className="flex flex-col gap-20 py-32">
+    <div className="flex flex-col gap-10 py-2">
       <div className="flex gap-3">
         <input
           type="text"
@@ -40,8 +40,8 @@ function CardFilter({ onFilter }) {
         />
       </div>
 
-      <div className="flex flex-col gap-3">
-        <div className="relative mt-2 rounded-md shadow-sm">
+      <div className="flex flex-col gap-2">
+        <div className="relative rounded-md shadow-sm">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <span className="text-gray-500 sm:text-sm">Rp</span>
           </div>
@@ -59,7 +59,7 @@ function CardFilter({ onFilter }) {
           />
         </div>
 
-        <div className="relative mt-2 rounded-md shadow-sm">
+        <div className="relative rounded-md shadow-sm">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <span className="text-gray-500 sm:text-sm">Rp</span>
           </div>
@@ -77,8 +77,8 @@ function CardFilter({ onFilter }) {
           />
         </div>
 
-        <button onClick={handleApplyPriceFilter} className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800">
-          Apply Price Filter
+        <button onClick={handleApplyPriceFilter} className="text-center px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800 uppercase">
+          Filter By Price
         </button>
       </div>
     </div>
