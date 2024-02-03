@@ -5,22 +5,18 @@ function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
   return (
-    <div>
-      <div className="flex justify-between bg-[#c2c2c2]">
-        <div className="flex-1" style={{ border: "3px solid red" }}></div>
-        <div className="flex-1" style={{ border: "3px solid blue" }}><p className="text-center text-xs">GOODMINTON- WE SERVE THE BEST!</p></div>
-        <div className="flex-1" style={{ border: "3px solid green" }}><p className="text-right text-xs">INDONESIA</p></div>
-      </div>
-      {/* <div className="flex flex-row h-[25] bg-[#c2c2c2]">
-        <div className="flex justify-center w-full">
-          <p className="text-center text-xs">GOODMINTON- WE SERVE THE BEST!</p>
-        </div> */}
-      {/* <div className="col-span-3 mt-[-20px] ml-[1000px]"> */}
-      {/* <div className="col-span-3 mt-[-20px]"> */}
-      {/* <div className="absolute w-full">
-          <p className="text-right text-xs">INDONESIA</p>
+    <div className="flex flex-col">
+      <div className="flex flex-row h-[30px] bg-[#c2c2c2] px-10" style={{alignItems:"center"}}>
+        <div className="flex-1"></div>
+        <div className="flex-1 flex justify-center">
+          <p className="text-xs">GOODMINTON- WE SERVE THE BEST!</p>
         </div>
-      </div> */}
+        <div className="flex-1 flex flex-row gap-5 justify-end">
+          <p className="text-xs">FAQs</p>
+          <p className="text-xs">Contact Us</p>
+          <p className="text-xs">INDONESIA</p>
+        </div>
+      </div>
       <div className="navbar flex bg-[#111] text-white">
         <div className="w-[25%]">
           <Link to="/" className="btn btn-ghost text-xl">GOODMINTON</Link>

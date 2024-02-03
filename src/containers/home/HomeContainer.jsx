@@ -6,7 +6,7 @@ import CardSlider from "./parts/CardSlider"
 
 function HomeContainer() {
   return (
-    <>
+    <div className="flex flex-col">
       <div className="mb-20">
         <CardSlider />
       </div>
@@ -19,7 +19,7 @@ function HomeContainer() {
       <div className="mb-10">
         <CardPlayerCollection />
       </div>
-    </>
+    </div>
   )
 }
 

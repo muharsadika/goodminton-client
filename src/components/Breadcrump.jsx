@@ -15,7 +15,7 @@ function Breadcrump({ link, page }) {
   const racket = racketsData.find((racket) => racket.id === parseInt(id));
 
   return (
-    <div className="px-32 text-lg">
+    <div className="text-sm">
       <nav className="text-gray-500">
         <ol className="list-none p-0 inline-flex">
           <li className="flex items-center">
@@ -26,8 +26,8 @@ function Breadcrump({ link, page }) {
             <Link to={link} className="hover:text-slate-700">{page}</Link>
             <RxSlash className="w-4 h-4 mx-2" />
           </li>
-          <li className="flex items-center">
-            {racket.name}
+          <li className="flex items-center hover:text-slate-700 font-semibold">
+            <Link to={`/rackets/${racket.id}`}>{racket.name}</Link>
           </li>
         </ol>
       </nav>

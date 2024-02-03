@@ -24,8 +24,8 @@ const CardSlider = () => {
   ];
 
   return (
-    <div className='slider-container'>
-      <Slider {...settings} className='slider-wrapper'>
+    <div className='w-[1520px] mx-auto'>
+      <Slider {...settings} className=''>
         {photos.map((photo, index) => (
           <div key={index}>
             <img src={photo} alt={`Slide ${index + 1}`} />

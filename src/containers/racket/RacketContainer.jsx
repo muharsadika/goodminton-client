@@ -13,7 +13,7 @@ function RacketContainer() {
       const isPriceInRange =
         (minPrice === '' || parseFloat(racket.price) >= minPrice)
         &&
-        (maxPrice === '' || parseFloat(racket.price) <= maxPrice);
+        (maxPrice === '' || parseFloat(racket.price) <= maxPrice)
 
       const isNameMatch = !name || racket.name.toLowerCase().includes(name.toLowerCase());
 
@@ -25,7 +25,7 @@ function RacketContainer() {
 
 
   return (
-    <div className="flex flex-row gap-5 py-20 px-20">
+    <div className="flex flex-row gap-5 py-10 px-20">
       <div className="w-[20%]">
         <CardFilter onFilter={handleFilterChange} />
       </div>

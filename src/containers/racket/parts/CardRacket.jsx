@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function CardRacket({ rackets }) {
-  const [visibleRackets, setVisibleRackets] = useState(8);
+  const [visibleRackets, setVisibleRackets] = useState(6);
 
   const remainingRackets = rackets.length - visibleRackets;
 
   const handleLoadMore = () => {
-    setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 8);
+    setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 6);
   };
 
   return (
@@ -16,17 +16,17 @@ function CardRacket({ rackets }) {
       <div className="text-5xl font-semibold">
         <p>RACKET</p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-10 gap-y-5">
+      <div className="grid grid-cols-3 gap-x-10 gap-y-10">
         {rackets.slice(0, visibleRackets).map((racket, index) => (
           <Link to={`/rackets/${racket.id}`} key={index}>
-            <div key={index} className="flex flex-col border rounded-xl overflow-hidden">
+            <div key={index} className="flex flex-col gap-3 border rounded-xl overflow-hidden">
               <div className="flex justify-center">
                 <img src={racket.imageSrc} alt={racket.name} className="w-72" />
               </div>
-              <div className="flex flex-col m-auto text-center gap-1 text-md py-3">
-                <p className="font-bold">{racket.name}</p>
-                <p className="text-xs">{racket.color}</p>
-                <p className="">{racket.price}</p>
+              <div className="flex flex-col m-auto text-justify gap-1 text-md py-3">
+                <p className="text-lg font-bold">{racket.name}</p>
+                <p className="text-xs italic">{racket.color}</p>
+                <p className="text-md mt-3" style={{ fontFamily: 'fantasy' }}>Rp {new Intl.NumberFormat('id-ID').format(racket.price)}</p>
               </div>
             </div>
           </Link>
