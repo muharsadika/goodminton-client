@@ -14,7 +14,7 @@ function Layout({ children }) {
           <Navbar />
         </div>
 
-        <div className="w-full min-h-screen mt-[98px]">
+        <div className="w-full min-h-screen p-10 mt-[88px]">
           {children}
         </div>
 

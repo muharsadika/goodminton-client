@@ -12,7 +12,7 @@ function CardRacket({ rackets }) {
   };
 
   return (
-    <div className="flex flex-col gap-12">
+    <div className="flex flex-col gap-10">
       <div className="text-5xl font-semibold">
         <p>RACKET</p>
       </div>

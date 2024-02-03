@@ -6,7 +6,7 @@ function Navbar() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row h-[30px] bg-[#c2c2c2] px-10" style={{alignItems:"center"}}>
+      <div className="flex flex-row h-[20px] bg-[#c2c2c2] px-10" style={{alignItems:"center"}}>
         <div className="flex-1"></div>
         <div className="flex-1 flex justify-center">
           <p className="text-xs">GOODMINTON- WE SERVE THE BEST!</p>
