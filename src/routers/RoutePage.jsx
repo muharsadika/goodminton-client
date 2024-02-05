@@ -27,16 +27,15 @@ function RoutePage() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<IsNotLogin />}> */}
-        <Route path="/" element={<HomePage />} />
-        <Route path="/rackets" element={<Racket />} />
-        <Route path="/rackets/:id" element={<RacketDetail />} />
-        <Route path="/strings" element={<String />} />
-        <Route path="/strings/:id" element={<StringDetail />} />
-
-        {/* </Route> */}
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/" element={<IsNotLogin />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/rackets" element={<Racket />} />
+          <Route path="/rackets/:id" element={<RacketDetail />} />
+          <Route path="/strings" element={<String />} />
+          <Route path="/strings/:id" element={<StringDetail />} />
+        </Route>
         <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </Router>
   );
