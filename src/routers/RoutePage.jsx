@@ -6,13 +6,14 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
-import LoginPage from "../pages/LoginPage";
-import HomePage from "../pages/HomePage";
-import RegisterPage from "../pages/RegisterPage";
+import Login from "../pages/Login";
+import Home from "../pages/Home";
+import Register from "../pages/Register";
 import Racket from "../pages/Racket";
 import RacketDetail from "../pages/RacketDetail";
 import String from "../pages/String";
 import StringDetail from "../pages/StringDetail";
+import Test from "../pages/Test";
 
 
 function RoutePage() {
@@ -28,14 +29,16 @@ function RoutePage() {
     <Router>
       <Routes>
         <Route path="/" element={<IsNotLogin />}>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<Home />} />
           <Route path="/rackets" element={<Racket />} />
           <Route path="/rackets/:id" element={<RacketDetail />} />
           <Route path="/strings" element={<String />} />
           <Route path="/strings/:id" element={<StringDetail />} />
+
+          <Route path="/test" element={<Test />} />
         </Route>
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );

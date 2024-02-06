@@ -1,7 +1,7 @@
 import Layout from "../layout/Layout"
 import HomeContainer from "../containers/home/HomeContainer"
 
-function HomePage() {
+function Home() {
   return (
     <Layout>
       <HomeContainer />
@@ -9,4 +9,4 @@ function HomePage() {
   )
 }
 
-export default HomePage
+export default Home

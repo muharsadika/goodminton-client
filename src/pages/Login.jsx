@@ -1,6 +1,6 @@
 import LoginContainer from "../containers/login/LoginContainer"
 
-function LoginPage() {
+function Login() {
   return (
     <>
       <LoginContainer />
@@ -8,4 +8,4 @@ function LoginPage() {
   )
 }
 
-export default LoginPage
+export default Login

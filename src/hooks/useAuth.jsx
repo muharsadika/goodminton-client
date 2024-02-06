@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { AUTH_LOGOUT } from "../stores/RootReducer";
+import { AUTH_LOGOUT } from "../stores/authReducer";
 import { useNavigate } from "react-router-dom";
 import { API } from "../libs/api";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";
 
 function useAuth() {
   const queryClient = useQueryClient();
@@ -73,6 +73,14 @@ function useAuth() {
     }
   }
 
+  const { data: userData } = useQuery('user', async () => {
+    const response = await API.get("/buyer/auth/check");
+    return response.data;
+  }, {
+    enabled: !!localStorage.getItem("token"), // only run the query if the user is logged in
+  });
+
+
   return {
     handleLogout,
     handleChange,
@@ -84,6 +92,7 @@ function useAuth() {
     error,
     errorLogin,
     registered,
+    userData,
   };
 
 }

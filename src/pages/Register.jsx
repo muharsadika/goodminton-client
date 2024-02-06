@@ -1,6 +1,6 @@
 import RegisterContainer from '../containers/register/RegisterContainer'
 
-function RegisterPage() {
+function Register() {
   return (
     <>
       <RegisterContainer />
@@ -8,4 +8,4 @@ function RegisterPage() {
   )
 }
 
-export default RegisterPage
+export default Register
