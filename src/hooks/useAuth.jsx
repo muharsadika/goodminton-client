@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { AUTH_LOGOUT } from "../stores/authReducer";
+import { AUTH_LOGOUT } from "../redux/authReducer";
 import { useNavigate } from "react-router-dom";
 import { API } from "../libs/api";
 import { useMutation, useQueryClient, useQuery } from "@tanstack/react-query";

@@ -1,23 +1,25 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  id: "",
-  email: "",
-  fullname: "",
+  id: '',
+  email: '',
+  fullname: '',
+  token: '',
 };
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState: initialState,
   reducers: {
     AUTH_LOGIN: (_, action) => {
       const payload = action.payload;
       // console.log(payload);
-      const { id, email, fullname } = payload;
+      const { id, email, fullname, token } = payload;
       const user = {
         id,
         email,
         fullname,
+        token,
       };
       return user;
     },
@@ -25,17 +27,18 @@ export const authSlice = createSlice({
     AUTH_CHECK: (_, action) => {
       const payload = action.payload;
       // console.log(payload);
-      const { id, email, fullname } = payload;
+      const { id, email, fullname, token } = payload;
       const user = {
         id,
         email,
         fullname,
-      }
+        token,
+      };
       return user;
     },
 
     AUTH_LOGOUT: () => {
-      localStorage.removeItem("token");
+      localStorage.removeItem('token');
       return initialState;
     },
   },

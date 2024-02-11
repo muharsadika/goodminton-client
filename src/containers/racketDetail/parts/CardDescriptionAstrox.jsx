@@ -56,7 +56,7 @@ function CardDescriptionAstrox() {
         <p className="text-md font-semibold">3. Revolutionary New Graphite Namd</p>
         <img className="w-[20%]" src="/src/assets/images/card-racket-description/astrox/3.namd.jpg" alt="namd" />
         <p>
-          A world-first, new dimension graphite material, Namd, greatly improves the adhesion of the graphite fibers and resin by attaching nanomaterial directly to the graphite fiber.In high performance racquets, it is common to combine nanomaterials with resin that connects graphite fibers, but in Namd, nanomaterials are directly adhered to the graphite fibers and resin is greatly increased. This major improvement produces a shaft that flexes and stores energy, delivering explosive force on impact with the shuttle.
+          A world-first, new dimension graphite material, Namd, greatly improves the adhesion of the graphite fibers and resin by attaching nanomaterial directly to the graphite fiber.In high performance racquets, it is common to combine nanomaterials with resin that connects graphite fibers, but in Namd, nanomaterials are directly adhered to the graphite fibers and resin is greatly increased. This major improvement produces a shaft that flexes and redux energy, delivering explosive force on impact with the shuttle.
         </p>
       </div>
 
