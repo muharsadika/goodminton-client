@@ -128,7 +128,7 @@ export default LoginContainer
 // import { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 // import { useDispatch } from 'react-redux';
-// import { AUTH_LOGIN } from '../../redux/authReducer';
+// import { AUTH_LOGIN } from '../../redux/sliceReducer';
 // import { API, SetAuthToken } from '../../libs/API';
 
 

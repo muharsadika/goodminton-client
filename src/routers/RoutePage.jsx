@@ -14,7 +14,7 @@ import String from "../pages/String";
 import StringDetail from "../pages/StringDetail";
 import Test from "../pages/Test";
 // import { useDispatch, useSelector } from "react-redux";
-// import { AUTH_CHECK } from "../redux/authReducer";
+// import { AUTH_CHECK } from "../redux/sliceReducer";
 // import { useEffect, useState } from "react";
 // import { API, SetAuthToken } from "../libs/API.js";
 

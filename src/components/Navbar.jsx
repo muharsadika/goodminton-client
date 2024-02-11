@@ -1,12 +1,22 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getProfile } from "../redux/slice/profileSlice";
 
 function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const dispatch = useDispatch();
+  const profile = useSelector((state) => state.profile);
+
+  useEffect(() => {
+    dispatch(getProfile());
+  }, [dispatch])
+  console.log(profile);
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-row h-[20px] bg-[#c2c2c2] px-10" style={{alignItems:"center"}}>
+      <div className="flex flex-row h-[20px] bg-[#c2c2c2] px-10" style={{ alignItems: "center" }}>
         <div className="flex-1"></div>
         <div className="flex-1 flex justify-center">
           <p className="text-xs">GOODMINTON- WE SERVE THE BEST!</p>
@@ -66,7 +76,8 @@ function Navbar() {
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar" onClick={() => setDropdownOpen(!isDropdownOpen)} >
               <div className="w-20 rounded-full">
-                <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                {/* <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
+                <img src={profile?.profile_picture || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="profile" />
               </div>
             </div>
             {isDropdownOpen && (
