@@ -1,33 +1,58 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { AUTH_LOGIN } from '../redux/slice/authSlice';
-import { API, SetAuthToken } from './api';
+import { login as loginAction } from '../../../redux/slice/authSlice'; // Pastikan untuk mengimpor action login
+import { useNavigate } from 'react-router-dom';
 
 export function useLogin() {
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const login = async (username, password) => {
-    setLoading(true);
-    setError(null);
     try {
-      const response = await API.post('/buyer/login', { username, password });
-      if (response.status === 200) {
-        SetAuthToken(response.data.token);
-        dispatch(AUTH_LOGIN(response.data));
-      } else {
-        throw new Error('Login failed');
-      }
+      await dispatch(loginAction({ username, password }));
+      navigate('/'); // Redirect ke halaman beranda
     } catch (error) {
+      console.error('Login failed:', error);
       setError(error.message);
-    } finally {
-      setLoading(false);
     }
   };
 
-  return { login, loading, error };
+  return { login, error };
 }
+
+
+
+// import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { AUTH_LOGIN } from '../redux/slice/authSlice';
+// import { API, SetAuthToken } from './api';
+
+// export function useLogin() {
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState(null);
+//   const dispatch = useDispatch();
+
+//   const login = async (username, password) => {
+//     setLoading(true);
+//     setError(null);
+//     try {
+//       const response = await API.post('/buyer/login', { username, password });
+//       if (response.status === 200) {
+//         SetAuthToken(response.data.token);
+//         dispatch(AUTH_LOGIN(response.data));
+//       } else {
+//         throw new Error('Login failed');
+//       }
+//     } catch (error) {
+//       setError(error.message);
+//     } finally {
+//       setLoading(false);
+//     }
+//   };
+
+//   return { login, loading, error };
+// }
 
 
 
