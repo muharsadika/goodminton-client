@@ -6,15 +6,30 @@ const initialState = {
   id: '',
   email: '',
   fullname: '',
-  status: 'idle', // Tambahkan status untuk melacak status permintaan
-  error: null, // Tambahkan error untuk menyimpan pesan kesalahan jika ada
+  status: 'idle',
+  error: null,
 };
 
-// Membuat asynchronous action untuk login
 export const login = createAsyncThunk(
   'auth/login',
   async ({ username, password }) => {
-    const response = await API.post('/buyer/login', { username, password });
+    const response = await API.post('/buyer/login', {
+      username,
+      password,
+    });
+    return response.data;
+  }
+);
+
+export const register = createAsyncThunk(
+  'auth/register',
+  async ({ fullname, email, username, password }) => {
+    const response = await API.post('/buyer/register', {
+      fullname,
+      email,
+      username,
+      password,
+    });
     return response.data;
   }
 );
@@ -41,6 +56,24 @@ export const authSlice = createSlice({
         state.error = null;
       })
       .addCase(login.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+    builder
+      .addCase(register.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(register.fulfilled, (state, action) => {
+        const { id, email, fullname, username } = action.payload;
+        state.status = 'succeeded';
+        state.id = id;
+        state.email = email;
+        state.fullname = fullname;
+        state.username = username;
+        state.error = null;
+      })
+
+      .addCase(register.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });

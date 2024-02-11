@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { login as loginAction } from '../../../redux/slice/authSlice'; // Pastikan untuk mengimpor action login
+import { unwrapResult } from '@reduxjs/toolkit';
+import { login as loginAction } from '../../../redux/slice/authSlice';
 import { useNavigate } from 'react-router-dom';
 
 export function useLogin() {
@@ -10,16 +11,43 @@ export function useLogin() {
 
   const login = async (username, password) => {
     try {
-      await dispatch(loginAction({ username, password }));
-      navigate('/'); // Redirect ke halaman beranda
-    } catch (error) {
-      console.error('Login failed:', error);
-      setError(error.message);
+      await dispatch(loginAction({ username, password })).then(unwrapResult);
+      navigate('/');
+    } catch (rejectedValueOrSerializedError) {
+      console.error('Login failed:', rejectedValueOrSerializedError);
+      setError(rejectedValueOrSerializedError.message);
     }
   };
 
   return { login, error };
 }
+
+
+
+
+
+// import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
+// import { login as loginAction } from '../../../redux/slice/authSlice';
+// import { useNavigate } from 'react-router-dom';
+
+// export function useLogin() {
+//   const [error, setError] = useState(null);
+//   const navigate = useNavigate();
+//   const dispatch = useDispatch();
+
+//   const login = async (username, password) => {
+//     try {
+//       await dispatch(loginAction({ username, password }));
+//       navigate('/');
+//     } catch (error) {
+//       console.error('Login failed:', error);
+//       setError(error.message);
+//     }
+//   };
+
+//   return { login, error };
+// }
 
 
 

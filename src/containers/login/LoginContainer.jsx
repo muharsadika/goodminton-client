@@ -2,14 +2,6 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useLogin } from './hook/useLogin';
 
-
-
-// import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
-// import { useDispatch } from 'react-redux';
-// import { AUTH_LOGIN } from '../../redux/authReducer';
-// import { API, SetAuthToken } from '../../libs/API';
-
 function LoginContainer() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -19,36 +11,15 @@ function LoginContainer() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      await login(username, password);
-      navigate('/'); // Redirect ke halaman beranda
+      const result = await login(username, password);
+      if (result) {
+        navigate('/');
+      }
     } catch (error) {
       console.error('Login failed:', error);
-      // Tampilkan pesan kesalahan ke pengguna
     }
   };
 
-
-  // const [username, setUsername] = useState('');
-  // const [password, setPassword] = useState('');
-  // const navigate = useNavigate();
-  // const dispatch = useDispatch();
-
-  // const handleSubmit = async (event) => {
-  //   event.preventDefault();
-  //   try {
-  //     const response = await API.post('/buyer/login', { username, password });
-  //     if (response.status === 200) {
-  //       SetAuthToken(response.data.token);
-  //       dispatch(AUTH_LOGIN(response.data));
-  //       navigate('/'); // Redirect ke halaman beranda
-  //     } else {
-  //       throw new Error('Login failed');
-  //     }
-  //   } catch (error) {
-  //     console.error('Login failed:', error);
-  //     // Tampilkan pesan kesalahan ke pengguna
-  //   }
-  // };
 
   return (
     <div>
@@ -140,3 +111,50 @@ function LoginContainer() {
 }
 
 export default LoginContainer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import { useState } from 'react';
+// import { useNavigate } from 'react-router-dom';
+// import { useDispatch } from 'react-redux';
+// import { AUTH_LOGIN } from '../../redux/authReducer';
+// import { API, SetAuthToken } from '../../libs/API';
+
+
+
+
+
+
+
+// const [username, setUsername] = useState('');
+// const [password, setPassword] = useState('');
+// const navigate = useNavigate();
+// const dispatch = useDispatch();
+
+// const handleSubmit = async (event) => {
+//   event.preventDefault();
+//   try {
+//     const response = await API.post('/buyer/login', { username, password });
+//     if (response.status === 200) {
+//       SetAuthToken(response.data.token);
+//       dispatch(AUTH_LOGIN(response.data));
+//       navigate('/'); // Redirect ke halaman beranda
+//     } else {
+//       throw new Error('Login failed');
+//     }
+//   } catch (error) {
+//     console.error('Login failed:', error);
+//     // Tampilkan pesan kesalahan ke pengguna
+//   }
+// };
