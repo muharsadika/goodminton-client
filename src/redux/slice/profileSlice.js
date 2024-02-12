@@ -20,10 +20,7 @@ export const getProfile = createAsyncThunk('profile', async () => {
     });
     return response.data;
   } catch (error) {
-    // Jika token sudah kedaluwarsa atau terjadi kesalahan lain saat meminta profil
-    // Anda dapat menangani kasus ini di sini
     if (error.response && error.response.status === 401) {
-      // Hapus token dari penyimpanan lokal
       localStorage.removeItem('token');
     }
     throw error;
