@@ -15,7 +15,7 @@ import StringDetail from "../pages/StringDetail";
 
 function RoutePage() {
 
-  function IsNotLogin() {
+  function isLogin() {
     const token = localStorage.getItem("token");
     if (!token) {
       return <Navigate to="/login" />;
@@ -24,20 +24,29 @@ function RoutePage() {
     }
   }
 
+  function isNotLogin() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      return <Navigate to="/" />;
+    } else {
+      return <Outlet />;
+    }
+  }
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<IsNotLogin />}>
+        <Route element={isLogin()}>
           <Route path="/" element={<Home />} />
           <Route path="/rackets" element={<Racket />} />
           <Route path="/rackets/:id" element={<RacketDetail />} />
           <Route path="/strings" element={<String />} />
           <Route path="/strings/:id" element={<StringDetail />} />
-
-          {/* <Route path="/test" element={<Test />} /> */}
         </Route>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
+        <Route element={isNotLogin()}>
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+        </Route>
       </Routes>
     </>
   );
