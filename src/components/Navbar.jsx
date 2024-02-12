@@ -76,7 +76,6 @@ function Navbar() {
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar" onClick={() => setDropdownOpen(!isDropdownOpen)} >
               <div className="w-20 rounded-full">
-                {/* <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" /> */}
                 <img src={profile?.profile_picture || "https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"} alt="profile" />
               </div>
             </div>
@@ -92,7 +91,7 @@ function Navbar() {
                   <Link>Settings</Link>
                 </li>
                 <li>
-                  <Link>Logout</Link>
+                  <button>Logout</button>
                 </li>
               </ul>
             )}

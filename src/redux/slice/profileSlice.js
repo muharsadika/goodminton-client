@@ -1,3 +1,4 @@
+// src/redux/slice/profileSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { API } from '../../libs/API';
 
@@ -11,13 +12,32 @@ const initialState = {
 };
 
 export const getProfile = createAsyncThunk('profile', async () => {
-  const response = await API.get('/buyer/auth/check-auth', {
-    headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-    },
-  });
-  return response.data;
+  try {
+    const response = await API.get('/buyer/auth/check-auth', {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    // Jika token sudah kedaluwarsa atau terjadi kesalahan lain saat meminta profil
+    // Anda dapat menangani kasus ini di sini
+    if (error.response && error.response.status === 401) {
+      // Hapus token dari penyimpanan lokal
+      localStorage.removeItem('token');
+    }
+    throw error;
+  }
 });
+
+// export const getProfile = createAsyncThunk('profile', async () => {
+//   const response = await API.get('/buyer/auth/check-auth', {
+//     headers: {
+//       Authorization: `Bearer ${localStorage.getItem('token')}`,
+//     },
+//   });
+//   return response.data;
+// });
 
 export const profileSlice = createSlice({
   name: 'profile',

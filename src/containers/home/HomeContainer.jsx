@@ -5,7 +5,6 @@ import CardSlider from "./parts/CardSlider"
 
 
 function HomeContainer() {
-  console.log(localStorage.getItem('token'));
 
   return (
     <div className="flex flex-col">

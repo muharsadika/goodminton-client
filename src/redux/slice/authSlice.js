@@ -1,6 +1,6 @@
 // src/redux/slice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { API, SetAuthToken } from '../../libs/API';
+import { API } from '../../libs/API';
 
 const initialState = {
   id: '',
@@ -34,15 +34,20 @@ export const register = createAsyncThunk(
   }
 );
 
+export const logout = createAsyncThunk('auth/logout', async () => {
+  localStorage.removeItem('token');
+  return {};
+});
+
 export const authSlice = createSlice({
   name: 'auth',
   initialState: initialState,
   reducers: {
-    AUTH_LOGOUT: () => {
-      localStorage.removeItem('token');
-      SetAuthToken(null);
-      return initialState;
-    },
+    // AUTH_LOGOUT: () => {
+    //   localStorage.removeItem('token');
+    //   SetAuthToken(null);
+    //   return initialState;
+    // },
   },
   extraReducers: (builder) => {
     builder
@@ -82,6 +87,18 @@ export const authSlice = createSlice({
         state.status = 'failed';
         state.error = action.error.message;
       });
+
+    builder
+      .addCase(logout.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(logout.fulfilled, (state) => {
+        state.status = 'idle';
+        state.id = '';
+        state.email = '';
+        state.fullname = '';
+        state.error = null;
+      })
   },
 });
 
