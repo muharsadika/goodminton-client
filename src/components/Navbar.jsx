@@ -1,18 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getProfile } from "../redux/slice/profileSlice";
+import { logout } from "../redux/slice/authSlice";
 
 function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
   const dispatch = useDispatch();
   const profile = useSelector((state) => state.profile);
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getProfile());
   }, [dispatch])
   console.log(profile);
+
+  const handleLogout = () => {
+    dispatch(logout());
+    setDropdownOpen(false);
+    navigate('/login');
+  };
 
   return (
     <div className="flex flex-col">
@@ -91,7 +99,7 @@ function Navbar() {
                   <Link>Settings</Link>
                 </li>
                 <li>
-                  <button>Logout</button>
+                  <button onClick={handleLogout}>Logout</button>
                 </li>
               </ul>
             )}
