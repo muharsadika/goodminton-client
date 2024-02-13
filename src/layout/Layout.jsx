@@ -4,9 +4,12 @@ import Footer from "../components/Footer";
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  noPadding: PropTypes.bool
 };
 
-function Layout({ children }) {
+function Layout({ children, noPadding }) {
+  const paddingClass = noPadding ? "" : "p-[40px]";
+
   return (
     <>
       <div className="flex flex-col justify-center items-center w-full">
@@ -14,14 +17,14 @@ function Layout({ children }) {
           <Navbar />
         </div>
 
-        <div className="w-full min-h-screen p-10 mt-[88px]">
+        <div className={`w-full min-h-screen mt-[88px] ${paddingClass}`}>
           {children}
         </div>
 
         <div className="w-full" >
           <Footer />
         </div>
-      </div>
+      </div >
     </>
   );
 }

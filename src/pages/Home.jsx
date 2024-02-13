@@ -3,7 +3,7 @@ import HomeContainer from "../containers/home/HomeContainer"
 
 function Home() {
   return (
-    <Layout>
+    <Layout noPadding>
       <HomeContainer />
     </Layout>
   )

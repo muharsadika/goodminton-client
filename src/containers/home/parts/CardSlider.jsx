@@ -24,7 +24,7 @@ const CardSlider = () => {
   ];
 
   return (
-    <div className='w-[1520px] mx-auto'>
+    <div className='w-full mx-auto'>
       <Slider {...settings} className=''>
         {photos.map((photo, index) => (
           <div key={index}>
