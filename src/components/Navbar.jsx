@@ -27,7 +27,7 @@ function Navbar() {
       <div className="flex flex-row h-[20px] bg-[#c2c2c2] px-5" style={{ alignItems: "center" }}>
         <div className="flex-1"></div>
         <div className="flex-1 flex justify-center">
-          <p className="text-xs">GOODMINTON- WE SERVE THE BEST!</p>
+          <p className="text-xs">GOODMINTON - WE SERVE THE BEST!</p>
         </div>
         <div className="flex-1 flex flex-row gap-5 justify-end">
           <p className="text-xs">FAQs</p>

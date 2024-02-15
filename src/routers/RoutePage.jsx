@@ -12,6 +12,7 @@ import Racket from "../pages/Racket";
 import RacketDetail from "../pages/RacketDetail";
 import String from "../pages/String";
 import StringDetail from "../pages/StringDetail";
+import Test from "../pages/Test";
 
 function RoutePage() {
   const [token, setToken] = useState(localStorage.getItem("token"));
@@ -54,6 +55,8 @@ function RoutePage() {
           <Route path="/rackets/:id" element={<RacketDetail />} />
           <Route path="/strings" element={<String />} />
           <Route path="/strings/:id" element={<StringDetail />} />
+          
+          <Route path="/test" element={<Test />} />
         </Route>
         <Route path="/" element={isNotLogin()}>
           <Route path="/register" element={<Register />} />
