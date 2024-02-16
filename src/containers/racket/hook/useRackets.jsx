@@ -10,9 +10,9 @@ const fetchRackets = async () => {
   return response.data.data;
 }
 
-export const useRacket = () => {
+export const useRackets = () => {
   return useQuery({
     queryKey: ["rackets"],
-    queryFn: fetchRackets,
+    queryFn: () => fetchRackets(),
   })
 }

@@ -1,9 +1,8 @@
-
 import { RxSlash } from "react-icons/rx";
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
-import racketsData from "../libs/mocks/rackets";
 import PropTypes from 'prop-types';
+import { useRacket } from "../containers/racketDetail/hook/useRacket";
 
 function Breadcrump({ link, page }) {
   Breadcrump.propTypes = {
@@ -12,7 +11,7 @@ function Breadcrump({ link, page }) {
   }
 
   const { id } = useParams();
-  const racket = racketsData.find((racket) => racket.id === parseInt(id));
+  const { data: racket } = useRacket(id);
 
   return (
     <div className="text-sm">
@@ -27,7 +26,7 @@ function Breadcrump({ link, page }) {
             <RxSlash className="w-4 h-4 mx-2" />
           </li>
           <li className="flex items-center hover:text-slate-700 font-semibold">
-            <Link to={`/rackets/${racket.id}`}>{racket.name}</Link>
+            {racket && <Link to={`/rackets/${racket.id}`}>{racket.product_name}</Link>}
           </li>
         </ol>
       </nav>
@@ -35,4 +34,4 @@ function Breadcrump({ link, page }) {
   )
 }
 
-export default Breadcrump
+export default Breadcrump;
