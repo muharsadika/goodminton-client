@@ -1,20 +1,30 @@
 import CardRacket from "./parts/CardRacket";
 import CardFilter from "./parts/CardFilter";
-import racketsData from "../../libs/mocks/rackets"
-import { useFilter } from "../../hooks/useFilterRacket";
+import { useRacket } from "./hook/useRacket";
+import { RacketProvider } from "./RacketContext";
+// import racketsData from "../../libs/mocks/rackets"
+// import { useFilter } from "../../hooks/useFilterRacket";
+// import { useRacket } from "./hook/useRacket";
 
 function RacketContainer() {
-  const { filteredData: filteredRackets, handleFilterChange } = useFilter(racketsData);
+  // const { data: rackets } = useRacket();
+  // const { filteredData: filteredRackets, handleFilterChange } = useFilter(rackets);
+
+  useRacket();
 
   return (
-    <div className="flex flex-row gap-5">
-      <div className="w-[20%]">
-        <CardFilter onFilter={handleFilterChange} />
+    <RacketProvider>
+      <div className="flex flex-row gap-5">
+        <div className="w-[20%]">
+          {/* <CardFilter onFilter={handleFilterChange} /> */}
+          <CardFilter />
+        </div>
+        <div className="w-[80%]">
+          {/* <CardRacket rackets={filteredRackets} /> */}
+          <CardRacket />
+        </div>
       </div>
-      <div className="w-[80%]">
-        <CardRacket rackets={filteredRackets} />
-      </div>
-    </div>
+    </RacketProvider>
   )
 }
 
