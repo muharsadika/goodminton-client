@@ -1,6 +1,6 @@
 // src/redux/slice/profileSlice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { API } from '../../libs/API';
+import { API } from '../../utils/API';
 
 const initialState = {
   id: '',

@@ -1,4 +1,4 @@
-import { API } from "../../../libs/API";
+import { API } from "../../../utils/API";
 import { useQuery } from "@tanstack/react-query";
 
 const fetchRackets = async () => {

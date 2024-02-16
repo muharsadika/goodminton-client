@@ -1,6 +1,6 @@
 // src/redux/slice.js
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { API } from '../../libs/API';
+import { API } from '../../utils/API';
 
 const initialState = {
   id: '',
@@ -92,6 +92,6 @@ export const authSlice = createSlice({
         state.email = '';
         state.fullname = '';
         state.error = null;
-      })
+      });
   },
 });

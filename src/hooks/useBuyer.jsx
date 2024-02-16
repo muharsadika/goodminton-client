@@ -1,20 +1,20 @@
-import { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { login as loginAction } from '../redux/slice/authSlice';
+// import { useEffect } from 'react';
+// import { useSelector, useDispatch } from 'react-redux';
+// import { login as loginAction } from '../redux/slice/authSlice';
 
-export function useBuyer() {
-  const dispatch = useDispatch();
-  const buyerData = useSelector(state => state.auth);
-  const token = localStorage.getItem('token'); // get the token from wherever you're storing it
+// export function useBuyer() {
+//   const dispatch = useDispatch();
+//   const buyerData = useSelector(state => state.auth);
+//   const token = localStorage.getItem('token'); // get the token from wherever you're storing it
 
-  useEffect(() => {
-    if (token && !buyerData.id) {
-      dispatch(loginAction({ token }));
-    }
-  }, [token, buyerData.id, dispatch]);
+//   useEffect(() => {
+//     if (token && !buyerData.id) {
+//       dispatch(loginAction({ token }));
+//     }
+//   }, [token, buyerData.id, dispatch]);
 
-  return buyerData;
-}
+//   return buyerData;
+// }
 
 
 
