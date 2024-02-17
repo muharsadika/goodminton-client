@@ -13,10 +13,15 @@ export function useRegister() {
     try {
       await dispatch(registerAction({ fullname, email, username, password })).then(unwrapResult);
       navigate('/login');
-    } catch (rejectedValueOrSerializedError) {
-      console.error('Registration failed:', rejectedValueOrSerializedError);
-      setError(rejectedValueOrSerializedError.message);
+    } catch (error){
+      console.error("Register failed:", error);
+      setError(error.message)
     }
+    
+    // catch (rejectedValueOrSerializedError) {
+    //   console.error('Registration failed:', rejectedValueOrSerializedError);
+    //   setError(rejectedValueOrSerializedError.message);
+    // }
   };
 
   return { register, error };

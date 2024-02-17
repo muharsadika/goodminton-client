@@ -49,16 +49,21 @@ function RoutePage() {
   return (
     <>
       <Routes>
-        <Route path="/" element={isLogin()}>
+        {/* <Route path="/" element={isLogin()}> */}
+        {/* jika menggunakan path pada isLogin() 
+        maka pengecekan berjalan ketika user menavigasi ke route "/" 
+        tapi jika tanpa path, pengecekan dilakukan ke semua route*/}
+
+        <Route element={isLogin()}>
           <Route path="/" element={<Home />} />
           <Route path="/rackets" element={<Racket />} />
           <Route path="/rackets/:id" element={<RacketDetail />} />
           <Route path="/strings" element={<String />} />
           <Route path="/strings/:id" element={<StringDetail />} />
-          
+
           <Route path="/test" element={<Test />} />
         </Route>
-        <Route path="/" element={isNotLogin()}>
+        <Route element={isNotLogin()}>
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
         </Route>

@@ -23,12 +23,12 @@ function CardRacektDetail() {
     <div className="px-32 gap-10 grid grid-rows-1 grid-flow-col">
       {/* <div className="px-32 gap-10 grid grid-rows-2 grid-flow-col"> */}
 
-      <div className="row-span-1 my-auto">
+      <div className="row-span-2">
         <img src={racket.product_image_1} alt={racket.product_name} className="w-[100%]" />
       </div>
 
-      <div className="flex flex-col gap-5">
-        {/* <div className="col-span-1"> */}
+      {/* <div className="flex flex-col gap-5"> */}
+      <div className="col-span-1">
         <div className='flex flex-col text-2xl'>
           <p className="font-bold">
             {racket.product_name}
@@ -99,7 +99,7 @@ function CardRacektDetail() {
       </div>
 
       {/* <div className="col-span-1">
-        <div className='flex flex-col gap-2 text-2xl'>
+        <div className='flex flex-col text-2xl'>
           <p className="font-bold">
             {racket.product_name}
           </p>
@@ -108,65 +108,66 @@ function CardRacektDetail() {
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Color</span>
             <span>:</span>
-            <span>{racket.color}</span>
+            <span>{description.Color}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Price</span>
             <span>:</span>
-            <span>{racket.price}</span>
+            <span>Rp {racket.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Flex</span>
             <span>:</span>
-            <span>{racket.Flex}</span>
+            <span>{description.Flex}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Frame</span>
             <span>:</span>
-            <span>{racket.Frame}</span>
+            <span>{description.Frame}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Shaft Composition</span>
             <span>:</span>
-            <span>{racket.ShaftComposition}</span>
+            <span>{description.ShaftComposition}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Joint</span>
             <span>:</span>
-            <span>{racket.Joint}</span>
+            <span>{description.Joint}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Length</span>
             <span>:</span>
-            <span>{racket.Length}</span>
+            <span>{description.Length}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Weight Grip</span>
             <span>:</span>
-            <span>{racket.WeightGrip}</span>
+            <span>{description.WeightGrip}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Stringing Advice</span>
             <span>:</span>
-            <span>{racket.StringingAdvice}</span>
+            <span>{description.StringingAdvice}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Color</span>
             <span>:</span>
-            <span>{racket.Color}</span>
+            <span>{description.Color}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Made In</span>
             <span>:</span>
-            <span>{racket.MadeIn}</span>
+            <span>{description.MadeIn}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Item Code</span>
             <span>:</span>
-            <span>{racket.ItemCode}</span>
+            <span>{description.ItemCode}</span>
           </p>
         </div>
       </div> */}
+
 
     </div>
   );

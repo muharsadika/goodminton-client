@@ -21,7 +21,7 @@ function CardDescription() {
   }, {});
 
   return (
-    <div className="flex flex-col px-32 gap-10 mt-40 text-justify">
+    <div className="flex flex-col px-32 gap-10 mt-20 text-justify">
       <div>
         <p className="text-2xl font-bold" style={descriptionStyle}>DESCRIPTION</p>
       </div>
