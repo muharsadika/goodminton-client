@@ -29,7 +29,7 @@ function CardRacektDetail() {
 
       {/* <div className="flex flex-col gap-5"> */}
       <div className="col-span-1">
-        <div className='flex flex-col text-2xl'>
+        <div className='flex flex-col text-2xl mb-5'>
           <p className="font-bold">
             {racket.product_name}
           </p>
