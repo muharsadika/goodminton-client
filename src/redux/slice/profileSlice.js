@@ -4,10 +4,10 @@ import { API } from '../../utils/API';
 
 const initialState = {
   id: '',
-  email: '',
   fullname: '',
   username: '',
-  adress: '',
+  email: '',
+  address: '',
   phone: '',
   profile_picture: '',
   carts: [],
@@ -48,7 +48,7 @@ export const profileSlice = createSlice({
         state.email = action.payload.data.email;
         state.fullname = action.payload.data.fullname;
         state.username = action.payload.data.username;
-        state.adress = action.payload.data.adress;
+        state.address = action.payload.data.address;
         state.phone = action.payload.data.phone;
         state.profile_picture = action.payload.data.profile_picture;
         state.carts = action.payload.data.carts;
