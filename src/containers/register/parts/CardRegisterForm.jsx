@@ -1,25 +1,20 @@
 import { useRegister } from "../hook/useRegister";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
 function CardRegisterForm() {
 
-  const { register } = useRegister();
-  const [fullname, setFullname] = useState('');
-  const [email, setEmail] = useState('');
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      await register(fullname, email, username, password);
-    } catch (error) {
-      console.error('Registration failed:', error);
-    }
-  };
-
+  const {
+    handleSubmit,
+    username,
+    setUsername,
+    password,
+    setPassword,
+    fullname,
+    setFullname,
+    email,
+    setEmail
+  } = useRegister();
 
   return (
     <>

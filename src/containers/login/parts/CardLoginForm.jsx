@@ -1,26 +1,15 @@
-import { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useLogin } from '../hook/useLogin';
 
 
 function CardLoginForm() {
-
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const navigate = useNavigate();
-  const { login } = useLogin();
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    try {
-      const result = await login(username, password);
-      if (result) {
-        navigate('/');
-      }
-    } catch (error) {
-      console.error('Login failed:', error);
-    }
-  };
+  const {
+    handleSubmit,
+    username,
+    setUsername,
+    password,
+    setPassword
+  } = useLogin();
 
 
   return (
