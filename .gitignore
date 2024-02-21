@@ -24,6 +24,6 @@ dist-ssr
 *.sw?
 
 src/assets
-src/pages/Test.jsx
+src/pages/test
 note.txt
 .env

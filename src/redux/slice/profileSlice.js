@@ -6,18 +6,23 @@ const initialState = {
   id: '',
   email: '',
   fullname: '',
+  username: '',
+  adress: '',
+  phone: '',
   profile_picture: '',
+  carts: [],
   status: 'idle',
   error: null,
 };
 
 export const getProfile = createAsyncThunk('profile', async () => {
   try {
-    const response = await API.get('/buyer/auth/check-auth', {
+    const response = await API.get('/buyer/auth/get-profile', {
       headers: {
         Authorization: `Bearer ${localStorage.getItem('token')}`,
       },
     });
+    // console.log(response.data.data);
     return response.data;
   } catch (error) {
     if (error.response && error.response.status === 401) {
@@ -26,15 +31,6 @@ export const getProfile = createAsyncThunk('profile', async () => {
     throw error;
   }
 });
-
-// export const getProfile = createAsyncThunk('profile', async () => {
-//   const response = await API.get('/buyer/auth/check-auth', {
-//     headers: {
-//       Authorization: `Bearer ${localStorage.getItem('token')}`,
-//     },
-//   });
-//   return response.data;
-// });
 
 export const profileSlice = createSlice({
   name: 'profile',
@@ -51,7 +47,11 @@ export const profileSlice = createSlice({
         state.id = action.payload.data.id;
         state.email = action.payload.data.email;
         state.fullname = action.payload.data.fullname;
+        state.username = action.payload.data.username;
+        state.adress = action.payload.data.adress;
+        state.phone = action.payload.data.phone;
         state.profile_picture = action.payload.data.profile_picture;
+        state.carts = action.payload.data.carts;
       })
       .addCase(getProfile.rejected, (state, action) => {
         state.status = 'failed';

@@ -7,14 +7,14 @@ import { logout } from "../redux/slice/authSlice";
 
 function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const dispatch = useDispatch();
   const profile = useSelector((state) => state.profile);
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(getProfile());
   }, [dispatch])
-  console.log(profile);
+  // console.log(profile);
 
   const handleLogout = () => {
     dispatch(logout());
