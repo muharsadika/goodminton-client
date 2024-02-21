@@ -44,12 +44,12 @@ function Navbar() {
             <li>
               <Link to="/rackets">RACKET</Link>
             </li>
-            <li>
+            {/* <li>
               <Link to="/strings">STRING</Link>
             </li>
             <li>
               <Link to="/">SHIRT</Link>
-            </li>
+            </li> */}
           </ul>
         </div>
         <div className="w-[25%] justify-end pr-12 gap-3" onClick={() => setDropdownOpen(!isDropdownOpen)}>
@@ -90,14 +90,14 @@ function Navbar() {
             {isDropdownOpen && (
               <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 text-black gap-2" >
                 <li>
-                  <Link className="justify-between">
+                  <Link to="/profile" className="justify-between">
                     Profile
                     <span className="badge">New</span>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link>Settings</Link>
-                </li>
+                </li> */}
                 <li>
                   <button onClick={handleLogout}>Logout</button>
                 </li>
