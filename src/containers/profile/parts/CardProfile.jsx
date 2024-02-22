@@ -15,7 +15,7 @@ function CardProfile() {
           <TbPhotoEdit size={30} className="cursor-pointer mt-[-50px] ml-[70px] drop-shadow-2xl absolute" />
         </label> */}
         <input type="file" id="file" onChange={handleFileChange} style={{ display: 'none' }} />
-        <label htmlFor="file" className="bg-gray-800 text-white text-xs rounded p-1 hover:bg-black cursor-pointer">
+        <label htmlFor="file" className="bg-black text-white text-xs rounded p-1 hover:bg-gray-800 cursor-pointer">
           change Photo
         </label>
       </div>
@@ -71,11 +71,11 @@ function CardProfile() {
 
         <div className="col-span-2 flex justify-end">
           {isLoading ? (
-            <button type="submit" className="bg-gray-800 text-white rounded px-5 py-2 hover:bg-black hover:text-white">
+            <button type="submit" className="bg-black text-white rounded px-5 py-2 hover:bg-gray-800 hover:text-white">
               Loading...
             </button>
           ) : (
-            <button type="submit" className="bg-gray-800 text-white rounded px-5 py-2 hover:bg-black hover:text-white">
+            <button type="submit" className="bg-black text-white rounded px-5 py-2 hover:bg-gray-800 hover:text-white">
               Save
             </button>
           )}

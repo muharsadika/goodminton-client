@@ -13,6 +13,7 @@ import RacketDetail from "../pages/RacketDetail";
 import String from "../pages/String";
 import StringDetail from "../pages/StringDetail";
 import Profile from "../pages/Profile"
+import Cart from "../pages/Cart"
 
 import TestProduct from "../pages/test/TestProduct";
 import TestProfile from "../pages/test/TestProfile";
@@ -65,6 +66,7 @@ function RoutePage() {
           <Route path="/strings" element={<String />} />
           <Route path="/strings/:id" element={<StringDetail />} />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/cart" element={<Cart />} />
 
           <Route path="/test-product" element={<TestProduct />} />
           <Route path="/test-profile" element={<TestProfile />} />
