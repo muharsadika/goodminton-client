@@ -1,12 +1,12 @@
+// Komponen CardCart
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getProfile } from "../../../redux/slice/profileSlice"
-import { useCart } from "../../racket/hook/useCart"
+import CardCartItem from "./CardCartItem"
 
 function CardCart() {
   const profile = useSelector(state => state.profile)
   const dispatch = useDispatch()
-  const { deleteFromCart } = useCart()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -32,14 +32,7 @@ function CardCart() {
           </thead>
           <tbody>
             {(profile.carts).map(cart => (
-              <tr key={cart.id} className="text-left">
-                <td><img src={cart.product.product_image_1} alt={cart.product.product_name} className="w-52 border rounded p-3 bg-gray-50" /></td>
-                <td>{cart.product.product_name}</td>
-                <td>Rp {(cart.product.product_price).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</td>
-                <td><input type="number" placeholder={cart.product_quantity} className="border border-gray-300 text-gray-400 rounded py-1 px-5 w-20" /></td>
-                <td>Rp {(cart.product.product_price * cart.product_quantity).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</td>
-                <td><button onClick={() => deleteFromCart(cart.id)} className="bg-red-600 text-white rounded text-xs py-1 px-2 hover:bg-red-700">Remove</button></td>
-              </tr>
+              <CardCartItem cart={cart} key={cart.id} />
             ))}
           </tbody>
         </table>
@@ -53,7 +46,65 @@ function CardCart() {
   )
 }
 
-export default CardCart
+export default CardCart;
+
+
+// import { useEffect } from "react"
+// import { useDispatch, useSelector } from "react-redux"
+// import { getProfile } from "../../../redux/slice/profileSlice"
+// import { useCart } from "../../racket/hook/useCart"
+
+// function CardCart() {
+//   const profile = useSelector(state => state.profile)
+//   const dispatch = useDispatch()
+//   const { deleteFromCart } = useCart()
+
+//   useEffect(() => {
+//     const interval = setInterval(() => {
+//       dispatch(getProfile())
+//     }, 5000);
+
+//     return () => clearInterval(interval);
+//   }, [dispatch])
+
+//   return (
+//     <div className="flex flex-row">
+//       <div className="w-[70%] border-r-[1px] border-gray-200 h-screen">
+//         <table className="table table-auto border border-x-0">
+//           <thead className="border border-l-0 border-r-0 bg-gray-50">
+//             <tr className="text-left">
+//               <th></th>
+//               <th>Product</th>
+//               <th>Price</th>
+//               <th>Quantity</th>
+//               <th>Subtotal</th>
+//               <th></th>
+//             </tr>
+//           </thead>
+//           <tbody>
+//             {(profile.carts).map(cart => (
+//               <tr key={cart.id} className="text-left">
+//                 <td><img src={cart.product.product_image_1} alt={cart.product.product_name} className="w-52 border rounded p-3 bg-gray-50" /></td>
+//                 <td>{cart.product.product_name}</td>
+//                 <td>Rp {(cart.product.product_price).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</td>
+//                 <td><input type="number" placeholder={cart.product_quantity} className="border border-gray-300 text-gray-400 rounded py-1 px-5 w-20" /></td>
+//                 <td>Rp {(cart.product.product_price * cart.product_quantity).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</td>
+//                 <td><button onClick={() => deleteFromCart(cart.id)} className="bg-red-600 text-white rounded text-xs py-1 px-2 hover:bg-red-700">Remove</button></td>
+//               </tr>
+//             ))}
+//           </tbody>
+//         </table>
+//       </div>
+
+//       <div className="border-l-[1px] border-gray-200 h-screen pl-5">
+//         <p>Total</p>
+//         <p>Rp {(profile.total).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</p>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default CardCart
 
 
 
