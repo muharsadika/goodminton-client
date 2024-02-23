@@ -18,6 +18,7 @@ export function useCart() {
         }
       });
       setLoading(false);
+      window.location.reload();
       return response.data;
     } catch (err) {
       setError(err.message);
