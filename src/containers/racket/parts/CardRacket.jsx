@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useRackets } from '../hook/useRackets';
 import { useRacketContext } from '../RacketContext';
-import { useCart } from '../hook/useCart';
+import { useCart } from '../../cart/hook/useCart';
 
 function CardRacket() {
   const { data: rackets, isLoading, isError } = useRackets();
@@ -55,7 +55,7 @@ function CardRacket() {
               </div>
               <div className='flex flex-row justify-center items-center w-full'>
                 <div className="w-1/2">
-                  <input type="number" value={quantity} onChange={(e) => setQuantity(e.target.value)} className="text-center border rounded text-gray-400 py-1 px-5 w-full" />
+                  <input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="text-center border rounded text-gray-400 py-1 px-5 w-full" />
                 </div>
                 <div className="w-1/2">
                   <button onClick={() => addToCart(racket.id, quantity)} className=" w-full border rounded bg-black text-white text-xs py-2 px-5 hover:bg-gray-800 cursor-pointer">Add to Cart</button>
@@ -75,3 +75,58 @@ function CardRacket() {
 }
 
 export default CardRacket;
+
+
+
+
+// // Komponen CardRacket
+// import { useState } from 'react';
+// import { useRackets } from '../hook/useRackets';
+// import { useRacketContext } from '../RacketContext';
+// import CardRacketItem from './CardRacketItem';
+
+// function CardRacket() {
+//   const { data: rackets, isLoading, isError } = useRackets();
+//   const [visibleRackets, setVisibleRackets] = useState(6);
+//   const { filterName, minPrice, maxPrice } = useRacketContext();
+
+//   if (isLoading) {
+//     return <div>Loading...</div>;
+//   }
+
+//   if (isError) {
+//     return <div>Error</div>;
+//   }
+
+//   const filteredRackets = rackets.filter(racket =>
+//     racket.product_name.toLowerCase().includes(filterName.toLowerCase()) &&
+//     (minPrice === 0 || racket.product_price >= Number(minPrice)) &&
+//     (maxPrice === 0 || racket.product_price <= Number(maxPrice))
+//   );
+
+//   const remainingRackets = filteredRackets.length - visibleRackets;
+
+//   const handleLoadMore = () => {
+//     setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 6);
+//   };
+
+//   return (
+//     <div className="flex flex-col gap-10">
+//       <div className="text-5xl font-semibold">
+//         <p>RACKET</p>
+//       </div>
+//       <div className="grid grid-cols-3 gap-x-10 gap-y-10">
+//         {filteredRackets.slice(0, visibleRackets).map((racket, index) => (
+//           <CardRacketItem key={index} racket={racket} />
+//         ))}
+//       </div>
+//       {remainingRackets > 0 && (
+//         <div className="flex justify-center mt-5">
+//           <button onClick={handleLoadMore} className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800">Load More ({remainingRackets})</button>
+//         </div>
+//       )}
+//     </div>
+//   );
+// }
+
+// export default CardRacket;

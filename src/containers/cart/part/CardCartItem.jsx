@@ -1,16 +1,20 @@
 // Komponen CartItem
-import { useState } from "react";
-import { useCart } from "../../racket/hook/useCart"
+// import { useState } from "react";
+import { useCart } from "../hook/useCart"
 import PropTypes from 'prop-types';
+import { useUpdateCartQuantity } from "../hook/useUpdateCartQuantity";
 
 CardCartItem.propTypes = {
   cart: PropTypes.object.isRequired,
 }
 
 function CardCartItem({ cart }) {
+  const [quantity, setQuantity] = useUpdateCartQuantity(cart.id, cart.product_quantity);
+  const subtotal = cart.product.product_price * quantity;
+
   const { deleteFromCart } = useCart()
-  const [quantity, setQuantity] = useState(cart.product_quantity); // Gunakan nilai awal quantity dari cart
-  const subtotal = cart.product.product_price * quantity; // Hitung subtotal berdasarkan quantity
+  // const [quantity, setQuantity] = useState(cart.product_quantity); // Gunakan nilai awal quantity dari cart
+  // const subtotal = cart.product.product_price * quantity; // Hitung subtotal berdasarkan quantity
 
   return (
     <tr key={cart.id} className="text-left">

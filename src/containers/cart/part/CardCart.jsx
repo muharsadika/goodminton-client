@@ -9,11 +9,7 @@ function CardCart() {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      dispatch(getProfile())
-    }, 5000);
-
-    return () => clearInterval(interval);
+    dispatch(getProfile())
   }, [dispatch])
 
   return (
