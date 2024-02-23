@@ -11,6 +11,7 @@ const initialState = {
   phone: '',
   profile_picture: '',
   carts: [],
+  total: 0,
   status: 'idle',
   error: null,
 };
@@ -52,6 +53,7 @@ export const profileSlice = createSlice({
         state.phone = action.payload.data.phone;
         state.profile_picture = action.payload.data.profile_picture;
         state.carts = action.payload.data.carts;
+        state.total = action.payload.data.total;
       })
       .addCase(getProfile.rejected, (state, action) => {
         state.status = 'failed';

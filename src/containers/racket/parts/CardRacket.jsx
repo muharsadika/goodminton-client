@@ -2,9 +2,11 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useRackets } from '../hook/useRackets';
 import { useRacketContext } from '../RacketContext';
+import { useCart } from '../hook/useCart';
 
 function CardRacket() {
   const { data: rackets, isLoading, isError } = useRackets();
+  const { addToCart } = useCart()
   const [visibleRackets, setVisibleRackets] = useState(6);
   const { filterName, minPrice, maxPrice } = useRacketContext();
 
@@ -39,19 +41,19 @@ function CardRacket() {
           let color = description.split(',').find(item => item.trim().startsWith('Color'));
           color = color ? color.replace('Color:', '') : '';
           return (
-            <Link to={`/rackets/${racket.id}`} key={index}>
-              <div key={index} className="flex flex-col gap-3 border rounded-xl overflow-hidden">
-                <div className="flex justify-center">
+            <div key={index} className="flex flex-col gap-3 border rounded-xl overflow-hidden">
+              <div className="flex justify-center">
+                <Link to={`/rackets/${racket.id}`} key={index}>
                   <img src={racket.product_image_1} alt={racket.product_name} className="w-72" />
-                </div>
-                <div className="uppercase flex flex-col m-auto text-justify gap-1 text-md py-3">
-                  <p className="text-lg font-bold">{racket.product_name} <span className="text-sm font-thin text-gray-400">({racket.product_quantity})</span></p>
-                  <p className="text-xs italic">{color}</p>
-                  {/* <p className="text-md mt-3" style={{ fontFamily: 'fantasy' }}>Rp {new Intl.NumberFormat('id-ID').format(racket.product_price)}</p> */}
-                  <p className="text-md mt-3" style={{ fontFamily: 'fantasy' }}>Rp {racket.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</p>
-                </div>
+                </Link>
               </div>
-            </Link>
+              <div className="uppercase flex flex-col m-auto text-justify gap-1 text-md py-3">
+                <p className="text-lg font-bold">{racket.product_name} <span className="text-sm font-thin text-gray-400">({racket.product_quantity})</span></p>
+                <p className="text-xs italic">{color}</p>
+                <p className="text-md mt-3" style={{ fontFamily: 'fantasy' }}>Rp {racket.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</p>
+              </div>
+              <button onClick={() => addToCart(racket.id, 1)} className="bg-black text-white text-xs rounded p-1 hover:bg-gray-800 cursor-pointer">Add to Cart</button>
+            </div>
           )
         })}
       </div>
