@@ -9,7 +9,7 @@ function CardRacket() {
   const { addToCart } = useCart()
   const [visibleRackets, setVisibleRackets] = useState(6);
   const { filterName, minPrice, maxPrice } = useRacketContext();
-  const [quantity, setQuantity] = useState(1);
+  const [quantities, setQuantities] = useState({});
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -55,21 +55,25 @@ function CardRacket() {
               </div>
               <div className='flex flex-row justify-center items-center w-full'>
                 <div className="w-1/2">
-                  <input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="text-center border rounded text-gray-400 py-1 px-5 w-full" />
+                  {/* <input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="text-center border rounded text-gray-400 py-1 px-5 w-full" /> */}
+                  <input type="number" value={quantities[racket.id] || 1} onChange={(e) => setQuantities({ ...quantities, [racket.id]: Number(e.target.value) })} className="text-center border rounded text-gray-400 py-1 px-5 w-full" />
                 </div>
                 <div className="w-1/2">
-                  <button onClick={() => addToCart(racket.id, quantity)} className=" w-full border rounded bg-black text-white text-xs py-2 px-5 hover:bg-gray-800 cursor-pointer">Add to Cart</button>
+                  {/* <button onClick={() => addToCart(racket.id, quantity)} className=" w-full border rounded bg-black text-white text-xs py-2 px-5 hover:bg-gray-800 cursor-pointer">Add to Cart</button> */}
+                  <button onClick={() => addToCart(racket.id, quantities[racket.id] || 1)} className=" w-full border rounded bg-black text-white text-xs py-2 px-5 hover:bg-gray-800 cursor-pointer">Add to Cart</button>
                 </div>
               </div>
             </div>
           )
         })}
       </div>
-      {remainingRackets > 0 && (
-        <div className="flex justify-center mt-5">
-          <button onClick={handleLoadMore} className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800">Load More ({remainingRackets})</button>
-        </div>
-      )}
+      <div className=''>
+        {remainingRackets > 0 && (
+          <div className="flex justify-center mt-40">
+            <button onClick={handleLoadMore} className="px-4 py-2 bg-black text-white rounded-md hover:bg-gray-800">Load More ({remainingRackets})</button>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
