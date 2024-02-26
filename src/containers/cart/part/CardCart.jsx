@@ -12,6 +12,22 @@ function CardCart() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    const snapScript = 'https://app.sandbox.midtrans.com/snap/snap.js';
+    const clientKey = import.meta.env.VITE_REACT_APP_PAYMENT_API;
+
+    const script = document.createElement('script');
+    script.src = snapScript;
+    script.setAttribute('data-client-key', clientKey);
+    script.async = true;
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
+  useEffect(() => {
     dispatch(getProfile())
   }, [dispatch])
 
@@ -38,10 +54,9 @@ function CardCart() {
       data,
       config
     )
-
-    const paymentUrl = response.data.data.redirect_url
-    // console.log(paymentUrl);
-    window.location.href = paymentUrl
+    
+    const token = response.data.data.token
+    window.snap.pay(token)
   }
 
   return (
