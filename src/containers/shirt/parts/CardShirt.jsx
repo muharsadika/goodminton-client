@@ -1,10 +1,12 @@
-import { useState } from 'react';String
+import { useState } from 'react'; String
 import { Link } from 'react-router-dom';
 import { useShirts } from '../hook/useShirt';
 import { useShirtContext } from '../ShirtContext';
 import { useCart } from '../../cart/hook/useCart';
 
+
 function CardShirt() {
+
   const { data: shirts, isLoading, isError } = useShirts();
   const { addToCart } = useCart()
   const [visibleShirts, setVisibleShirts] = useState(6);
@@ -30,6 +32,7 @@ function CardShirt() {
   const handleLoadMore = () => {
     setVisibleShirts(prevVisibleShirts => prevVisibleShirts + 6);
   };
+
 
   return (
     <div className="flex flex-col gap-10">
