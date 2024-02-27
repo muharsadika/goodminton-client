@@ -1,17 +1,21 @@
-import CardString from "./parts/CardString"
-import CardFilter from "./parts/CardFilter"
+import CardString from "./parts/CardString";
+import CardStringFilter from "./parts/CardStringFilter"
+import { StringProvider } from "./StringContext";
+
 
 function StringContainer() {
   return (
-    <div className="flex flex-row gap-5 p-5">
-      <div className="w-[20%]" style={{ border: "1px solid red" }}>
-        <CardFilter />
+    <StringProvider>
+      <div className="flex flex-row gap-5">
+        <div className="w-[20%]">
+          <CardStringFilter />
+        </div>
+        <div className="w-[80%]">
+          <CardString />
+        </div>
       </div>
-      <div className="w-[80%]">
-        <CardString />
-      </div>
-    </div>
+    </StringProvider>
   )
 }
 
-export default StringContainer
+export default StringContainer;

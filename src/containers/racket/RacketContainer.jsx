@@ -2,8 +2,8 @@ import CardRacket from "./parts/CardRacket";
 import CardFilter from "./parts/CardFilter";
 import { RacketProvider } from "./RacketContext";
 
-function RacketContainer() {
 
+function RacketContainer() {
   return (
     <RacketProvider>
       <div className="flex flex-row gap-5">

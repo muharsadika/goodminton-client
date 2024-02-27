@@ -1,8 +1,12 @@
-import React from 'react'
+import Layout from "../layout/Layout"
+import ShirtContainer from "../containers/shirt/ShirtContainer"
+
 
 function Shirt() {
   return (
-    <div>Shirt</div>
+    <Layout>
+      <ShirtContainer />
+    </Layout>
   )
 }
 

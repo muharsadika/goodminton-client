@@ -4,6 +4,7 @@ import { useRackets } from '../hook/useRackets';
 import { useRacketContext } from '../RacketContext';
 import { useCart } from '../../cart/hook/useCart';
 
+
 function CardRacket() {
   const { data: rackets, isLoading, isError } = useRackets();
   const { addToCart } = useCart()
@@ -31,11 +32,13 @@ function CardRacket() {
     setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 6);
   };
 
+
   return (
     <div className="flex flex-col gap-10">
       <div className="text-5xl font-semibold">
         <p>RACKET</p>
       </div>
+
       <div className="grid grid-cols-3 gap-x-10 gap-y-10">
         {filteredRackets.slice(0, visibleRackets).map((racket, index) => {
           const description = racket.product_description;
@@ -48,18 +51,18 @@ function CardRacket() {
                   <img src={racket.product_image_1} alt={racket.product_name} className="w-72" />
                 </Link>
               </div>
+
               <div className="uppercase flex flex-col m-auto text-justify gap-1 text-md py-3">
                 <p className="text-lg font-bold">{racket.product_name} <span className="text-sm font-thin text-gray-400">({racket.product_quantity})</span></p>
                 <p className="text-xs italic">{color}</p>
                 <p className="text-md mt-3" style={{ fontFamily: 'fantasy' }}>Rp {racket.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</p>
               </div>
+
               <div className='flex flex-row justify-center items-center w-full'>
                 <div className="w-1/2">
-                  {/* <input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="text-center border rounded text-gray-400 py-1 px-5 w-full" /> */}
                   <input type="number" value={quantities[racket.id] || 1} onChange={(e) => setQuantities({ ...quantities, [racket.id]: Number(e.target.value) })} className="text-center border rounded text-gray-400 py-1 px-5 w-full" />
                 </div>
                 <div className="w-1/2">
-                  {/* <button onClick={() => addToCart(racket.id, quantity)} className=" w-full border rounded bg-black text-white text-xs py-2 px-5 hover:bg-gray-800 cursor-pointer">Add to Cart</button> */}
                   <button onClick={() => addToCart(racket.id, quantities[racket.id] || 1)} className=" w-full border rounded bg-black text-white text-xs py-2 px-5 hover:bg-gray-800 cursor-pointer">Add to Cart</button>
                 </div>
               </div>
@@ -79,6 +82,22 @@ function CardRacket() {
 }
 
 export default CardRacket;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -6,14 +6,16 @@ import {
   Outlet,
 } from "react-router-dom";
 import Login from "../pages/Login";
-import Home from "../pages/Home";
 import Register from "../pages/Register";
+import Home from "../pages/Home";
+import Profile from "../pages/Profile"
+import Cart from "../pages/Cart"
 import Racket from "../pages/Racket";
 import RacketDetail from "../pages/RacketDetail";
 import String from "../pages/String";
 import StringDetail from "../pages/StringDetail";
-import Profile from "../pages/Profile"
-import Cart from "../pages/Cart"
+import Shirt from "../pages/Shirt"
+import ShirtDetail from "../pages/ShirtDetail"
 
 import TestProduct from "../pages/test/TestProduct";
 import TestProfile from "../pages/test/TestProfile";
@@ -61,12 +63,14 @@ function RoutePage() {
 
         <Route element={isLogin()}>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/rackets" element={<Racket />} />
           <Route path="/rackets/:id" element={<RacketDetail />} />
           <Route path="/strings" element={<String />} />
           <Route path="/strings/:id" element={<StringDetail />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/shirts" element={<Shirt />} />
+          <Route path="/shirt/:id" element={<ShirtDetail />} />
 
           <Route path="/test-product" element={<TestProduct />} />
           <Route path="/test-profile" element={<TestProfile />} />

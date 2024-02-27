@@ -1,24 +1,38 @@
 import CardLoginImage from './parts/CardLoginImage';
 import CardLoginForm from './parts/CardLoginForm';
 
+
 function LoginContainer() {
   return (
-    <>
-      {/* <div className="bg-gray-100 flex justify-center items-center h-screen"> */}
-      <div className="flex flex-row justify-center items-center h-screen">
-        <div className='w-1/2'>
-          <CardLoginImage />
-        </div>
-        <div className='w-1/2'>
-          <CardLoginForm />
-        </div>
+    <div className="flex flex-row justify-center items-center h-screen">
+      <div className='w-1/2'>
+        <CardLoginImage />
       </div>
-    </>
-
+      <div className='w-1/2'>
+        <CardLoginForm />
+      </div>
+    </div>
   )
 }
 
 export default LoginContainer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

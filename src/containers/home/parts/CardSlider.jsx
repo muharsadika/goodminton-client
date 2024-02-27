@@ -2,6 +2,7 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
+
 const CardSlider = () => {
   const settings = {
     dots: true,
@@ -23,6 +24,7 @@ const CardSlider = () => {
     '/src/assets/images/card-slider/cascade-accel-website-banner.jpg',
   ];
 
+
   return (
     <div className='w-full mx-auto'>
       <Slider {...settings} className=''>
@@ -37,6 +39,12 @@ const CardSlider = () => {
 };
 
 export default CardSlider;
+
+
+
+
+
+
 
 
 // import { useState } from "react";

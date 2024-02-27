@@ -16,12 +16,12 @@ function CardRegisterForm() {
     setEmail
   } = useRegister();
 
+
   return (
-    <>
-      {/* <div className="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2"> */}
       <div className="w-full p-36 h-screen">
         <h1 className="text-2xl font-semibold mb-4">Register</h1>
         <form onSubmit={handleSubmit}>
+          
           <div className="mb-4">
             <label htmlFor="fullname" className="block text-gray-600">
               Full Name
@@ -35,6 +35,7 @@ function CardRegisterForm() {
               onChange={(e) => setFullname(e.target.value)}
             />
           </div>
+
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-600">
               email
@@ -48,6 +49,7 @@ function CardRegisterForm() {
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
+
           <div className="mb-4">
             <label htmlFor="username" className="block text-gray-600">
               Username
@@ -61,6 +63,7 @@ function CardRegisterForm() {
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
+
           <div className="mb-4">
             <label htmlFor="password" className="block text-gray-600">
               Password
@@ -74,9 +77,11 @@ function CardRegisterForm() {
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+
           <button type="submit" className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full" >
             Register
           </button>
+
         </form>
         <div className="mt-6 text-center">
           <p>already have an account? </p>
@@ -85,7 +90,6 @@ function CardRegisterForm() {
           </Link>
         </div>
       </div>
-    </>
   )
 }
 

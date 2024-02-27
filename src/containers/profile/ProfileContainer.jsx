@@ -1,5 +1,6 @@
 import CardProfile from "./parts/CardProfile"
 
+
 function ProfileContainer() {
   return (
     <div>
@@ -9,6 +10,40 @@ function ProfileContainer() {
 }
 
 export default ProfileContainer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

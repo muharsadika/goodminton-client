@@ -1,7 +1,9 @@
 import { useParams } from 'react-router-dom';
 import { useRacket } from '../hook/useRacket';
 
-function CardRacektDetail() {
+
+function CardRacketDetail() {
+
   const { id } = useParams();
   const { data: racket, isLoading, isError } = useRacket(id);
 
@@ -19,15 +21,13 @@ function CardRacektDetail() {
     return acc;
   }, {});
 
+
   return (
     <div className="px-32 gap-10 grid grid-rows-1 grid-flow-col">
-      {/* <div className="px-32 gap-10 grid grid-rows-2 grid-flow-col"> */}
-
       <div className="row-span-2">
         <img src={racket.product_image_1} alt={racket.product_name} className="w-[100%]" />
       </div>
 
-      {/* <div className="flex flex-col gap-5"> */}
       <div className="col-span-1">
         <div className='flex flex-col text-2xl mb-5'>
           <p className="font-bold">
@@ -167,10 +167,8 @@ function CardRacektDetail() {
           </p>
         </div>
       </div> */}
-
-
     </div>
   );
 }
 
-export default CardRacektDetail;
+export default CardRacketDetail;

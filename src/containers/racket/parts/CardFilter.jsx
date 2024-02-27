@@ -1,7 +1,9 @@
 import { useRacketContext } from "../RacketContext";
 import { NumericFormat } from 'react-number-format';
 
+
 function CardFilter() {
+
   const {
     filterName,
     setFilterName,
@@ -17,6 +19,7 @@ function CardFilter() {
     setPrice(value || 0);
   };
 
+
   return (
     <div className="flex flex-col gap-10 py-2">
       <div className="flex gap-3">
@@ -28,6 +31,7 @@ function CardFilter() {
           className="border rounded-md p-2 w-full hover:border-gray-500"
         />
       </div>
+
       <div className="flex flex-col gap-2">
         <div className="relative rounded-md shadow-sm">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -44,6 +48,7 @@ function CardFilter() {
             className="border rounded-md p-2 w-full hover:border-gray-500 py-1.5 pl-10 pr-20"
           />
         </div>
+
         <div className="relative rounded-md shadow-sm">
           <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
             <span className="text-gray-500 sm:text-sm">Rp</span>
@@ -59,6 +64,7 @@ function CardFilter() {
             className="border rounded-md p-2 w-full hover:border-gray-500 py-1.5 pl-10 pr-20"
           />
         </div>
+
       </div>
     </div>
   );

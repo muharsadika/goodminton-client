@@ -1,7 +1,6 @@
 function CardNewArrival() {
   return (
     <div className="flex flex-col justify-center gap-3">
-
       <div className="flex justify-center text-lg font-bold">
         <p>NEW ARRIVALS</p>
       </div>

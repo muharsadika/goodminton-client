@@ -1,5 +1,3 @@
-// Komponen CartItem
-// import { useState } from "react";
 import { useCart } from "../hook/useCart"
 import PropTypes from 'prop-types';
 import { useUpdateCartQuantity } from "../hook/useUpdateCartQuantity";
@@ -9,12 +7,8 @@ CardCartItem.propTypes = {
 }
 
 function CardCartItem({ cart }) {
-  const [quantity, setQuantity] = useUpdateCartQuantity(cart.id, cart.product_quantity);
-  // const subtotal = cart.product.product_price * quantity;
-
   const { deleteFromCart } = useCart()
-  // const [quantity, setQuantity] = useState(cart.product_quantity); // Gunakan nilai awal quantity dari cart
-  // const subtotal = cart.product.product_price * quantity; // Hitung subtotal berdasarkan quantity
+  const [quantity, setQuantity] = useUpdateCartQuantity(cart.id, cart.product_quantity);
 
   return (
     <tr key={cart.id} className="text-left">
@@ -22,7 +16,6 @@ function CardCartItem({ cart }) {
       <td>{cart.product.product_name}</td>
       <td>Rp {(cart.product.product_price).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</td>
       <td><input type="number" value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} className="border border-gray-300 text-gray-400 rounded py-1 px-5 w-20" /></td>
-      {/* <td>Rp {(subtotal).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</td> */}
       <td>Rp {(cart.subtotal_price).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</td>
       <td><button onClick={() => deleteFromCart(cart.id)} className="bg-red-600 text-white rounded text-xs py-1 px-2 hover:bg-red-700">Remove</button></td>
     </tr>

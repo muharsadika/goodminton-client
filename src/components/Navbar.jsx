@@ -44,12 +44,12 @@ function Navbar() {
             <li>
               <Link to="/rackets">RACKET</Link>
             </li>
-            {/* <li>
+            <li>
               <Link to="/strings">STRING</Link>
             </li>
             <li>
-              <Link to="/">SHIRT</Link>
-            </li> */}
+              <Link to="/shirts">SHIRT</Link>
+            </li>
           </ul>
         </div>
         <div className="w-[25%] justify-end pr-12 gap-3" onClick={() => setDropdownOpen(!isDropdownOpen)}>

@@ -1,91 +1,172 @@
 import { useParams } from 'react-router-dom';
-import stringsData from '../../../libs/mocks/strings';
+import { useString } from '../hook/useString';
+
 
 function CardStringDetail() {
-  const { id } = useParams();
-  const string = stringsData.find((string) => string.id === parseInt(id));
 
-  if (!string) {
-    return <div>Raket tidak ditemukan</div>;
+  const { id } = useParams();
+  const { data: string, isLoading, isError } = useString(id);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
   }
 
-  return (
-    <div className="flex flex-row justify-center px-32 gap-10">
+  if (isError) {
+    return <div>Error</div>;
+  }
 
-      <div className="w-[50%] flex justify-center items-center">
-        <img src={string.imageSrc} alt={string.name} className="w-[100%]" />
+  const description = string.product_description.split(',').reduce((acc, item) => {
+    const [key, value] = item.split(':');
+    acc[key.trim()] = value ? value.trim() : '';
+    return acc;
+  }, {});
+
+
+  return (
+    <div className="px-32 gap-10 grid grid-rows-1 grid-flow-col">
+      <div className="row-span-2">
+        <img src={string.product_image_1} alt={string.product_name} className="w-[100%]" />
       </div>
 
-      <div className="flex flex-col gap-10 py-3 w-[50%]">
-        <div className='flex flex-col gap-2 text-2xl'>
+      <div className="col-span-1">
+        <div className='flex flex-col text-2xl mb-5'>
           <p className="font-bold">
-            {string.name}
+            {string.product_name}
           </p>
         </div>
         <div className='flex flex-col gap-2 text-md'>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Color</span>
             <span>:</span>
-            <span>{string.color}</span>
+            <span>{description.Color}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Price</span>
             <span>:</span>
-            <span>{string.price}</span>
+            <span>Rp {string.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Flex</span>
             <span>:</span>
-            <span>{string.Flex}</span>
+            <span>{description.Flex}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Frame</span>
             <span>:</span>
-            <span>{string.Frame}</span>
+            <span>{description.Frame}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Shaft Composition</span>
             <span>:</span>
-            <span>{string.ShaftComposition}</span>
+            <span>{description.ShaftComposition}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Joint</span>
             <span>:</span>
-            <span>{string.Joint}</span>
+            <span>{description.Joint}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Length</span>
             <span>:</span>
-            <span>{string.Length}</span>
+            <span>{description.Length}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Weight Grip</span>
             <span>:</span>
-            <span>{string.WeightGrip}</span>
+            <span>{description.WeightGrip}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Stringing Advice</span>
             <span>:</span>
-            <span>{string.StringingAdvice}</span>
+            <span>{description.StringingAdvice}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Color</span>
             <span>:</span>
-            <span>{string.Color}</span>
+            <span>{description.Color}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Made In</span>
             <span>:</span>
-            <span>{string.MadeIn}</span>
+            <span>{description.MadeIn}</span>
           </p>
           <p className='flex gap-5'>
             <span className="w-[200px] inline-block">Item Code</span>
             <span>:</span>
-            <span>{string.ItemCode}</span>
+            <span>{description.ItemCode}</span>
           </p>
         </div>
       </div>
 
+      {/* <div className="col-span-1">
+        <div className='flex flex-col text-2xl'>
+          <p className="font-bold">
+            {string.product_name}
+          </p>
+        </div>
+        <div className='flex flex-col gap-2 text-md'>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Color</span>
+            <span>:</span>
+            <span>{description.Color}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Price</span>
+            <span>:</span>
+            <span>Rp {string.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Flex</span>
+            <span>:</span>
+            <span>{description.Flex}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Frame</span>
+            <span>:</span>
+            <span>{description.Frame}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Shaft Composition</span>
+            <span>:</span>
+            <span>{description.ShaftComposition}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Joint</span>
+            <span>:</span>
+            <span>{description.Joint}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Length</span>
+            <span>:</span>
+            <span>{description.Length}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Weight Grip</span>
+            <span>:</span>
+            <span>{description.WeightGrip}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Stringing Advice</span>
+            <span>:</span>
+            <span>{description.StringingAdvice}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Color</span>
+            <span>:</span>
+            <span>{description.Color}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Made In</span>
+            <span>:</span>
+            <span>{description.MadeIn}</span>
+          </p>
+          <p className='flex gap-5'>
+            <span className="w-[200px] inline-block">Item Code</span>
+            <span>:</span>
+            <span>{description.ItemCode}</span>
+          </p>
+        </div>
+      </div> */}
     </div>
   );
 }

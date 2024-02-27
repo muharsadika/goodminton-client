@@ -5,7 +5,6 @@ import CardSlider from "./parts/CardSlider"
 
 
 function HomeContainer() {
-
   return (
     <div className="flex flex-col">
       <div className="mb-20">

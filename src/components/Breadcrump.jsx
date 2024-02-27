@@ -4,7 +4,9 @@ import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useRacket } from "../containers/racketDetail/hook/useRacket";
 
+
 function Breadcrump({ link, page }) {
+
   Breadcrump.propTypes = {
     link: PropTypes.string,
     page: PropTypes.string
@@ -12,6 +14,7 @@ function Breadcrump({ link, page }) {
 
   const { id } = useParams();
   const { data: racket } = useRacket(id);
+
 
   return (
     <div className="text-sm">
@@ -21,10 +24,12 @@ function Breadcrump({ link, page }) {
             <Link to="/" className="hover:text-slate-700">Home</Link>
             <RxSlash className="w-4 h-4 mx-2" />
           </li>
+
           <li className="flex items-center">
             <Link to={link} className="hover:text-slate-700">{page}</Link>
             <RxSlash className="w-4 h-4 mx-2" />
           </li>
+
           <li className="flex items-center hover:text-slate-700 font-semibold">
             {racket && <Link to={`/rackets/${racket.id}`}>{racket.product_name}</Link>}
           </li>

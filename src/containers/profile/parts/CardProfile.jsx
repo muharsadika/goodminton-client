@@ -1,19 +1,18 @@
 import { useSelector } from "react-redux"
 import { useProfileUpdate } from "../hook/useProfileUpdate"
-// import { TbPhotoEdit } from 'react-icons/tb'
+
 
 function CardProfile() {
+
   const profile = useSelector(state => state.profile)
   console.log(profile);
   const { formValues, handleChange, handleFileChange, handleSubmit, isLoading } = useProfileUpdate()
+
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-row justify-center border rounded-2xl my-auto p-20 bg-gray-50">
       <div className="flex flex-col items-center gap-5 absolute ml-[-500px]">
         <img className="rounded-full w-40 border" src={profile.profile_picture} alt="profile" />
-        {/* <label htmlFor="file">
-          <TbPhotoEdit size={30} className="cursor-pointer mt-[-50px] ml-[70px] drop-shadow-2xl absolute" />
-        </label> */}
         <input type="file" id="file" onChange={handleFileChange} style={{ display: 'none' }} />
         <label htmlFor="file" className="bg-black text-white text-xs rounded p-1 hover:bg-gray-800 cursor-pointer">
           change Photo

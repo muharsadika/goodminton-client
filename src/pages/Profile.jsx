@@ -1,6 +1,7 @@
 import ProfileContainer from "../containers/profile/ProfileContainer"
 import Layout from "../layout/Layout"
 
+
 function Profile() {
   return (
     <Layout>
