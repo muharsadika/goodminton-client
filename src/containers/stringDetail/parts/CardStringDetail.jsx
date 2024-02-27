@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useString } from '../hook/useString';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function CardStringDetail() {
@@ -8,7 +9,7 @@ function CardStringDetail() {
   const { data: string, isLoading, isError } = useString(id);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><ClipLoader /></div>;
   }
 
   if (isError) {

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useShirts } from '../hook/useShirt';
 import { useShirtContext } from '../ShirtContext';
 import { useCart } from '../../cart/hook/useCart';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function CardShirt() {
@@ -14,7 +15,7 @@ function CardShirt() {
   const [quantities, setQuantities] = useState({});
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><ClipLoader /></div>;
   }
 
   if (isError) {

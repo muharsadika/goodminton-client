@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { useStrings } from '../hook/useString';
 import { useStringContext } from '../StringContext';
 import { useCart } from '../../cart/hook/useCart';
+import ClipLoader from "react-spinners/ClipLoader";
+
 
 function CardString() {
   const { data: strings, isLoading, isError } = useStrings();
@@ -12,7 +14,7 @@ function CardString() {
   const [quantities, setQuantities] = useState({});
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><ClipLoader /></div>;
   }
 
   if (isError) {
@@ -30,6 +32,7 @@ function CardString() {
   const handleLoadMore = () => {
     setVisibleStrings(prevVisibleStrings => prevVisibleStrings + 6);
   };
+
 
   return (
     <div className="flex flex-col gap-10">

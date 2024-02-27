@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useRacket } from '../hook/useRacket';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function CardRacketDetail() {
@@ -8,7 +9,7 @@ function CardRacketDetail() {
   const { data: racket, isLoading, isError } = useRacket(id);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><ClipLoader /></div>;
   }
 
   if (isError) {

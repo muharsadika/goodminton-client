@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useShirt } from '../hook/useShirt';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function CardShirtDetail() {
@@ -8,7 +9,7 @@ function CardShirtDetail() {
   const { data: shirt, isLoading, isError } = useShirt(id);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><ClipLoader /></div>;
   }
 
   if (isError) {

@@ -26,15 +26,13 @@ const CardSlider = () => {
 
 
   return (
-    <div className='w-full mx-auto'>
-      <Slider {...settings} className=''>
-        {photos.map((photo, index) => (
-          <div key={index}>
-            <img src={photo} alt={`Slide ${index + 1}`} />
-          </div>
-        ))}
-      </Slider>
-    </div>
+    <Slider {...settings}>
+      {photos.map((photo, index) => (
+        <div key={index}>
+          <img src={photo} alt={`Slide ${index + 1}`} className='w-full' />
+        </div>
+      ))}
+    </Slider>
   );
 };
 

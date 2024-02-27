@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useRackets } from '../hook/useRackets';
 import { useRacketContext } from '../RacketContext';
 import { useCart } from '../../cart/hook/useCart';
+import ClipLoader from "react-spinners/ClipLoader";
 
 
 function CardRacket() {
@@ -13,7 +14,7 @@ function CardRacket() {
   const [quantities, setQuantities] = useState({});
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <div><ClipLoader /></div>;
   }
 
   if (isError) {
