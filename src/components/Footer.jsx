@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="footer footer-center p-10 rounded text-white bg-[#111]">
+    <footer className="footer footer-center p-10 rounded text-white bg-[#222]">
       <nav className="grid grid-flow-col gap-4">
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
@@ -21,7 +21,7 @@ function Footer() {
           <Link to="https://www.youtube.com/">
             <FaYoutube className="w-7 h-7" />
           </Link>
-          <Link to="https://www.facebook.com/"> 
+          <Link to="https://www.facebook.com/">
             <FaFacebookSquare className="w-7 h-7" />
           </Link>
         </div>

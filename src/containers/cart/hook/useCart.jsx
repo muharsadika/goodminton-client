@@ -10,6 +10,7 @@ export function useCart() {
     setError(null);
     try {
       const response = await axios.post('http://localhost:5000/api/buyer/auth/add-cart', {
+      // const response = await axios.post('https://goodminton-server.onrender.com/api/buyer/auth/add-cart', {
         product_id: productId,
         product_quantity: quantity
       }, {
@@ -31,6 +32,7 @@ export function useCart() {
     setError(null);
     try {
       const response = await axios.delete(`http://localhost:5000/api/buyer/auth/delete-cart/${cartId}`, {
+      // const response = await axios.delete(`https://goodminton-server.onrender.com/api/buyer/auth/delete-cart/${cartId}`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }

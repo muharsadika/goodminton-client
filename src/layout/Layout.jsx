@@ -17,7 +17,7 @@ function Layout({ children, noPadding }) {
           <Navbar />
         </div>
 
-        <div className={`w-full min-h-screen mt-[88px] ${paddingClass}`}>
+        <div className={`w-full min-h-screen mt-[100px] ${paddingClass}`}>
           {children}
         </div>
 
