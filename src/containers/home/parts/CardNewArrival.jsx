@@ -8,7 +8,7 @@ function CardNewArrival() {
 
         <div className="flex flex-col justify-center items-center">
           <div>
-            <img src="/src/assets/images/card-new-arrival/92431WEX_COBL-1024x1024.jpg" alt="Placeholder Image" className="w-72" />
+            <img src={import.meta.env.CARD_NEW_ARRIVAL_16} alt="Placeholder Image" className="w-72" />
           </div>
           <div className="flex flex-col text-center text-[13px] font-bold">
             <p>
@@ -25,7 +25,7 @@ function CardNewArrival() {
 
         <div className="flex flex-col justify-center items-center">
           <div>
-            <img src="/src/assets/images/card-new-arrival/92431WEX_COBL-1024x1024.jpg" alt="Placeholder Image" className="w-72" />
+            <img src={import.meta.env.CARD_NEW_ARRIVAL_16} alt="Placeholder Image" className="w-72" />
           </div>
           <div className="flex flex-col text-center text-[13px] font-bold">
             <p>
@@ -42,7 +42,7 @@ function CardNewArrival() {
 
         <div className="flex flex-col justify-center items-center">
           <div>
-            <img src="/src/assets/images/card-new-arrival/92431WEX_COBL-1024x1024.jpg" alt="Placeholder Image" className="w-72" />
+            <img src={import.meta.env.CARD_NEW_ARRIVAL_16} alt="Placeholder Image" className="w-72" />
           </div>
           <div className="flex flex-col text-center text-[13px] font-bold">
             <p>
@@ -59,7 +59,7 @@ function CardNewArrival() {
 
         <div className="flex flex-col justify-center items-center">
           <div>
-            <img src="/src/assets/images/card-new-arrival/92431WEX_COBL-1024x1024.jpg" alt="Placeholder Image" className="w-72" />
+            <img src={import.meta.env.CARD_NEW_ARRIVAL_16} alt="Placeholder Image" className="w-72" />
           </div>
           <div className="flex flex-col text-center text-[13px] font-bold">
             <p>
@@ -76,7 +76,7 @@ function CardNewArrival() {
 
         <div className="flex flex-col justify-center items-center">
           <div>
-            <img src="/src/assets/images/card-new-arrival/92431WEX_COBL-1024x1024.jpg" alt="Placeholder Image" className="w-72" />
+            <img src={import.meta.env.CARD_NEW_ARRIVAL_16} alt="Placeholder Image" className="w-72" />
           </div>
           <div className="flex flex-col text-center text-[13px] font-bold">
             <p>

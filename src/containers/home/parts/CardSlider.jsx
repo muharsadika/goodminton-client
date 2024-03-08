@@ -18,10 +18,14 @@ const CardSlider = () => {
   };
 
   const photos = [
-    '/src/assets/images/card-slider/nf-nextage-website-banner.jpg',
-    '/src/assets/images/card-slider/1000z-launch-website-banner.webp',
-    '/src/assets/images/card-slider/800pro-website-banner-launch.jpg',
-    '/src/assets/images/card-slider/cascade-accel-website-banner.jpg',
+    import.meta.env.CARD_SLIDER_1,
+    import.meta.env.CARD_SLIDER_2,
+    import.meta.env.CARD_SLIDER_3,
+    import.meta.env.CARD_SLIDER_4,
+    import.meta.env.CARD_SLIDER_5,
+    import.meta.env.CARD_SLIDER_6,
+    import.meta.env.CARD_SLIDER_7,
+    import.meta.env.CARD_SLIDER_8,
   ];
 
 
