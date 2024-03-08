@@ -18,14 +18,14 @@ const CardSlider = () => {
   };
 
   const photos = [
-    import.meta.env.CARD_SLIDER_1,
-    import.meta.env.CARD_SLIDER_2,
-    import.meta.env.CARD_SLIDER_3,
-    import.meta.env.CARD_SLIDER_4,
-    import.meta.env.CARD_SLIDER_5,
-    import.meta.env.CARD_SLIDER_6,
-    import.meta.env.CARD_SLIDER_7,
-    import.meta.env.CARD_SLIDER_8,
+    import.meta.env.VITE_CARD_SLIDER_1,
+    import.meta.env.VITE_CARD_SLIDER_2,
+    import.meta.env.VITE_CARD_SLIDER_3,
+    import.meta.env.VITE_CARD_SLIDER_4,
+    import.meta.env.VITE_CARD_SLIDER_5,
+    import.meta.env.VITE_CARD_SLIDER_6,
+    import.meta.env.VITE_CARD_SLIDER_7,
+    import.meta.env.VITE_CARD_SLIDER_8,
   ];
 
 
