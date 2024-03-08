@@ -17,9 +17,9 @@ import StringDetail from "../pages/StringDetail";
 import Shirt from "../pages/Shirt"
 import ShirtDetail from "../pages/ShirtDetail"
 
-import TestProduct from "../pages/test/TestProduct";
-import TestProfile from "../pages/test/TestProfile";
-import TestSlider from "../pages/test/TestSlider";
+// import TestProduct from "../pages/test/TestProduct";
+// import TestProfile from "../pages/test/TestProfile";
+// import TestSlider from "../pages/test/TestSlider";
 
 
 function RoutePage() {
@@ -73,9 +73,9 @@ function RoutePage() {
           <Route path="/shirts" element={<Shirt />} />
           <Route path="/shirt/:id" element={<ShirtDetail />} />
 
-          <Route path="/test-product" element={<TestProduct />} />
+          {/* <Route path="/test-product" element={<TestProduct />} />
           <Route path="/test-profile" element={<TestProfile />} />
-          <Route path="/test-slider" element={<TestSlider />} />
+          <Route path="/test-slider" element={<TestSlider />} /> */}
         </Route>
         <Route element={isNotLogin()}>
           <Route path="/register" element={<Register />} />
