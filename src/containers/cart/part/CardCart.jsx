@@ -12,7 +12,7 @@ function CardCart() {
   // snap embed for using window.snap.pay
   useEffect(() => {
     const snapScript = 'https://app.sandbox.midtrans.com/snap/snap.js';
-    const clientKey = import.meta.env.VITE_REACT_APP_PAYMENT_API;
+    const clientKey = import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_RENDER;
     const script = document.createElement('script');
     script.src = snapScript;
     script.setAttribute('data-client-key', clientKey);
@@ -44,7 +44,7 @@ function CardCart() {
       },
     }
     const response = await axios.post(
-      import.meta.env.VITE_REACT_APP_PAYMENT_API,
+      import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_RENDER,
       data,
       config
     )
