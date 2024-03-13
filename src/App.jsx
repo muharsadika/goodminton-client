@@ -4,6 +4,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 import { configureStore } from "@reduxjs/toolkit";
 import rootReducer from "./redux/rootReducer";
+import { ToastContainer } from "react-toastify";
 
 export default function App() {
   const client = new QueryClient();
@@ -16,6 +17,7 @@ export default function App() {
     <QueryClientProvider client={client}>
       <Provider store={store}>
         <Router>
+          <ToastContainer />
           <RoutePage />
         </Router>
       </Provider>

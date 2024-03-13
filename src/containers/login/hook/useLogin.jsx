@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { login as loginAction } from '../../../redux/slice/authSlice';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function useLogin() {
   const [username, setUsername] = useState('');
@@ -13,6 +15,7 @@ export function useLogin() {
   const login = async (username, password) => {
     try {
       await dispatch(loginAction({ username, password }));
+      toast.success('Login successful!');
       navigate('/');
     } catch (error) {
       console.error('Login failed:', error);
@@ -23,10 +26,7 @@ export function useLogin() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const result = await login(username, password);
-      if (result) {
-        navigate('/');
-      }
+      await login(username, password);
     } catch (error) {
       console.error('Login failed:', error);
     }

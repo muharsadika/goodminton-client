@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export const API = axios.create({
-  baseURL: import.meta.env.VITE_REACT_APP_API_RENDER,
+  baseURL: import.meta.env.VITE_REACT_APP_API_LOCALHOST,
 });
 
 export const SetAuthToken = (token) => {

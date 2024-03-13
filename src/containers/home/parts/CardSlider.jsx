@@ -11,10 +11,10 @@ const CardSlider = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 2000,
     pauseOnHover: true,
-    centerMode: true,
     centerPadding: '0',
+    fade: true,
   };
 
   const photos = [
@@ -32,7 +32,7 @@ const CardSlider = () => {
   return (
     <Slider {...settings}>
       {photos.map((photo, index) => (
-        <div key={index}>
+        <div key={index} className="mb-5">
           <img src={photo} alt={`Slide ${index + 1}`} className='w-full' />
         </div>
       ))}

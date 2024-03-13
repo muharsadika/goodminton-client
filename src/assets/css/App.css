@@ -31,6 +31,10 @@
   color: #00f; /* Adjust the color of the active dot */
 }
 
+.custom-placeholder::placeholder {
+  color: red; /* Adjust the color to match text-gray-300 */
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
