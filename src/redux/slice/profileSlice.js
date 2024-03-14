@@ -56,7 +56,7 @@ export const profileSlice = createSlice({
         state.phone = action.payload.data.phone;
         state.profile_picture = action.payload.data.profile_picture;
         state.carts = action.payload.data.carts;
-        state.carts.item = action.payload.data.carts.items;
+        state.carts.items = action.payload.data.carts.items;
         state.carts.cart_total_quantity =
           action.payload.data.carts.cart_total_quantity;
         state.carts.cart_total_price =
