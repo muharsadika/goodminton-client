@@ -36,12 +36,14 @@ function Navbar() {
         </div>
       </div>
 
-      <div className="navbar bg-[#222] text-white px-10">
-        <div className="w-[25%]">
-          <Link to="/" className="text-2xl">GOODMINTON</Link>
+      <div className="flex justify-center items-center h-20 bg-[#222] text-white px-10">
+        <div className="w-[25%] px-15">
+          <Link to="/">
+            <img src={"src/assets/images/goodminton10.png"} alt="Goodminton" className="w-24" />
+          </Link>
         </div>
 
-        <div className="w-[50%] justify-center">
+        <div className="w-[50%] flex justify-center">
           <div className="menu menu-horizontal gap-10 text-lg font-extralight">
             <Link to="/rackets" className="hover:text-gray-500">RACKETS</Link>
             <Link to="/#" className="hover:text-gray-500">SHOES</Link>
@@ -51,19 +53,19 @@ function Navbar() {
           </div>
         </div>
 
-        <div className="w-[25%] flex justify-end gap-2">
+        <div className="w-[25%] flex justify-end gap-5 px-10">
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle" onClick={() => setDropdownOpen(!isDropdownOpen)}>
               <div className="indicator">
                 <BsCart4 className="text-3xl hover:text-gray-500" />
-                {/* <span className="badge badge-sm indicator-item">8</span> */}
+                <span className="badge badge-sm indicator-item">{profile.carts.cart_total_quantity}</span>
               </div>
             </div>
             {isDropdownOpen && (
               <div tabIndex={0} className="mt-3 z-[1] card card-compact dropdown-content text-base w-52 bg-[#222] shadow">
                 <div className="card-body">
-                  <span className="font-bold text-lg">8 Items</span>
-                  <span className="text-info">Subtotal: $999</span>
+                  <span className="font-bold text-lg">{profile.carts.cart_total_quantity} {profile.carts.cart_total_quantity > 1 ? 'Items' : 'Item'}</span>
+                  <span className="text-info">Rp {(profile.carts.cart_total_price).toLocaleString('id-ID', { minimumFractionDigits: 0 })}</span>
                   <div className="card-actions">
                     <button className="btn btn-primary btn-block" onClick={() => navigate('/cart')}>View cart</button>
                   </div>
@@ -73,7 +75,7 @@ function Navbar() {
           </div>
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar-group" onClick={() => setDropdownOpen(!isDropdownOpen)}>
-              <div className="w-20 rounded-full">
+              <div className="w-24 rounded-full">
                 <img src={profile?.profile_picture} />
               </div>
             </div>
