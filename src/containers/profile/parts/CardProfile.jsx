@@ -1,13 +1,14 @@
-import { useSelector } from "react-redux"
-import { useProfileUpdate } from "../hook/useProfileUpdate"
-
+import { useProfile } from "../../../hooks/useProfile"
 
 function CardProfile() {
-
-  const profile = useSelector(state => state.profile)
-  console.log(profile);
-  const { formValues, handleChange, handleFileChange, handleSubmit, isLoading } = useProfileUpdate()
-
+  const {
+    profile,
+    formValues,
+    handleChange,
+    handleFileChange,
+    handleSubmit,
+    isLoading,
+  } = useProfile()
 
   return (
     <form onSubmit={handleSubmit} className="flex flex-row justify-center border rounded-2xl my-auto p-20 bg-gray-50">
@@ -23,14 +24,14 @@ function CardProfile() {
         </div>
       </div>
       <div className="grid grid-cols-2 gap-5 items-center">
-        <label className="text-right mr-5">Profile :</label>
+        <label className="text-right mr-5">Fullname :</label>
         <input
           name="fullname"
           value={formValues.fullname}
           onChange={handleChange}
           className="border border-gray-300 rounded py-1 px-2 text-gray-400"
           type="text"
-          placeholder={profile.fullname}
+        placeholder={profile.fullname}
         />
 
         <label className="text-right mr-5">Username :</label>
