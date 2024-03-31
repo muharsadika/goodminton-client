@@ -36,6 +36,18 @@ export const getProfile = createAsyncThunk('profile', async () => {
   }
 });
 
+export const updateProfile = createAsyncThunk(
+  'profile/update',
+  async (data) => {
+    const response = await API.patch('/buyer/auth/update-profile', data, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('token')}`,
+      },
+    });
+    return response.data;
+  }
+);
+
 export const profileSlice = createSlice({
   name: 'profile',
   initialState: initialState,
@@ -63,6 +75,27 @@ export const profileSlice = createSlice({
           action.payload.data.carts.cart_total_price;
       })
       .addCase(getProfile.rejected, (state, action) => {
+        state.status = 'failed';
+        state.error = action.error.message;
+      });
+
+    builder
+      .addCase(updateProfile.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(updateProfile.fulfilled, (state, action) => {
+        // console.log(action.payload);
+        state.status = 'succeeded';
+        state.fullname = action.payload.data.fullname;
+        state.username = action.payload.data.username;
+        state.email = action.payload.data.email;
+        state.phone = action.payload.data.phone;
+        state.address = action.payload.data.address;
+        if (action.payload.data.profile_picture) {
+          state.profile_picture = action.payload.data.profile_picture;
+        }
+      })
+      .addCase(updateProfile.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.error.message;
       });
