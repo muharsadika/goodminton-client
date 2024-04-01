@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { getProfile } from "../redux/slice/profileSlice";
 import { logout } from "../redux/slice/authSlice";
 import { BsCart4 } from "react-icons/bs";
+import { CgProfile } from "react-icons/cg";
 
 function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
@@ -39,7 +40,7 @@ function Navbar() {
       <div className="flex justify-center items-center h-20 bg-[#222] text-white px-10">
         <div className="w-[25%] px-15">
           <Link to="/">
-            <img src={"src/assets/images/goodminton10.png"} alt="Goodminton" className="w-24" />
+            <img src={import.meta.env.VITE_GOODMINTON_LOGO} alt="Goodminton" className="w-24" />
           </Link>
         </div>
 
@@ -76,7 +77,7 @@ function Navbar() {
           <div className="dropdown dropdown-end">
             <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar-group" onClick={() => setDropdownOpen(!isDropdownOpen)}>
               <div className="w-24 rounded-full">
-                <img src={profile?.profile_picture} />
+                {profile.profile_picture ? <img src={profile.profile_picture} alt="user" /> : <CgProfile className="text-3xl hover:text-gray-500" />}
               </div>
             </div>
             {isDropdownOpen && (
