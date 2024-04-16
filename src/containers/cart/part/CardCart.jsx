@@ -14,8 +14,8 @@ function CardCart() {
   }, [dispatch])
 
   return (
-    <div className="flex flex-row">
-      <div className="w-[70%] border-r-[1px] border-gray-200 h-screen">
+    <div className="flex flex-row" style={{ border: "5px solid red" }}>
+      <div className="w-[70%] border-r-[1px] border-gray-200 min-h-screen">
         <table className="table table-auto border border-x-0">
           <thead className="border border-l-0 border-r-0 bg-gray-50">
             <tr className="text-left">
@@ -35,7 +35,7 @@ function CardCart() {
         </table>
       </div>
 
-      <div className="w-[30%] flex flex-col border-l-[1px] border-gray-200 h-screen pl-5 gap-10">
+      <div className="w-[30%] flex flex-col border-l-[1px] border-gray-200 h-min-screen pl-5 gap-10">
         <div className="">
           <p>Total Quantity</p>
           <p>{profile.carts.cart_total_quantity}</p>
