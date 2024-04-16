@@ -14,7 +14,7 @@ function CardCart() {
   }, [dispatch])
 
   return (
-    <div className="flex flex-row" style={{ border: "5px solid red" }}>
+    <div className="flex flex-row">
       <div className="w-[70%] border-r-[1px] border-gray-200 min-h-screen">
         <table className="table table-auto border border-x-0">
           <thead className="border border-l-0 border-r-0 bg-gray-50">
