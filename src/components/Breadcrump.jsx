@@ -2,7 +2,7 @@ import { RxSlash } from "react-icons/rx";
 import { Link } from 'react-router-dom';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { useRacket } from "../containers/racketDetail/hook/useRacket";
+import { useRacket } from "../containers/racket/racketDetail/hook/useRacket";
 
 
 function Breadcrump({ link, page }) {

@@ -47,10 +47,10 @@ function Navbar() {
         <div className="w-[50%] flex justify-center">
           <div className="menu menu-horizontal gap-10 text-lg font-extralight">
             <Link to="/rackets" className="hover:text-gray-500">RACKETS</Link>
-            <Link to="/#" className="hover:text-gray-500">SHOES</Link>
-            <Link to="/#" className="hover:text-gray-500">SHIRTS</Link>
             <Link to="/#" className="hover:text-gray-500">STRINGS</Link>
             <Link to="/#" className="hover:text-gray-500">BAGS</Link>
+            <Link to="/#" className="hover:text-gray-500">SHIRTS</Link>
+            <Link to="/#" className="hover:text-gray-500">SHOES</Link>
           </div>
         </div>
 

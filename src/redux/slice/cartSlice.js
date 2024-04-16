@@ -1,6 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { API } from '../../utils/API';
 
+// const initialState = {
+//   items: [],
+// };
+
+export const getCart = createAsyncThunk('cart/getCart', async () => {
+  const response = await API.get('/buyer/auth/get-cart', {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+  return response.data;
+});
+
 // Async thunk untuk menambahkan produk ke keranjang
 export const addProductToCart = createAsyncThunk(
   'cart/addProduct',
@@ -34,6 +47,11 @@ export const cartSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(getCart.fulfilled, (state, action) => {
+        return action.payload;
+        // state.status = 'succeeded';
+        // state = action.payload.data.items;
+      })
       .addCase(addProductToCart.fulfilled, (state, action) => {
         state.push(action.payload); // Menambahkan produk baru ke state keranjang
       })

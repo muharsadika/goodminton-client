@@ -5,21 +5,22 @@ import {
   Navigate,
   Outlet,
 } from "react-router-dom";
-import Login from "../pages/Login";
-import Register from "../pages/Register";
-import Home from "../pages/Home";
-import Profile from "../pages/Profile"
-import Cart from "../pages/Cart"
-import Racket from "../pages/Racket";
-import RacketDetail from "../pages/RacketDetail";
-import String from "../pages/String";
-import StringDetail from "../pages/StringDetail";
-import Shirt from "../pages/Shirt"
-import ShirtDetail from "../pages/ShirtDetail"
+import AuthRegister from "../pages/auth/AuthRegister";
+import AuthLogin from "../pages/auth/AuthLogin";
+import Home from "../pages/home/Home";
+import Profile from "../pages/profile/Profile"
+import Cart from "../pages/cart/Cart"
+import Racket from "../pages/racket/Racket";
+import RacketDetail from "../pages/racket/RacketDetail";
+import String from "../pages/string/String";
+import StringDetail from "../pages/string/StringDetail";
+import Shirt from "../pages/shirt/Shirt"
+import ShirtDetail from "../pages/shirt/ShirtDetail"
 
 // import TestProduct from "../pages/test/TestProduct";
 // import TestProfile from "../pages/test/TestProfile";
 // import TestSlider from "../pages/test/TestSlider";
+import TestTransaction from '../pages/test/TestTransaction';
 
 
 function RoutePage() {
@@ -73,13 +74,14 @@ function RoutePage() {
           <Route path="/shirts" element={<Shirt />} />
           <Route path="/shirt/:id" element={<ShirtDetail />} />
 
-          {/* <Route path="/test-product" element={<TestProduct />} />
-          <Route path="/test-profile" element={<TestProfile />} />
-          <Route path="/test-slider" element={<TestSlider />} /> */}
+          {/* <Route path="/test-product" element={<TestProduct />} /> */}
+          {/* <Route path="/test-profile" element={<TestProfile />} /> */}
+          {/* <Route path="/test-slider" element={<TestSlider />} /> */}
+          <Route path="/test-transaction" element={<TestTransaction />} />
         </Route>
         <Route element={isNotLogin()}>
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<AuthRegister />} />
+          <Route path="/login" element={<AuthLogin />} />
         </Route>
       </Routes>
     </>

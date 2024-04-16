@@ -1,4 +1,4 @@
-import { useProfile } from "../../../hooks/useProfile"
+import { useProfile } from "../../profile/hook/useProfile"
 
 function CardProfile() {
   const {
@@ -31,7 +31,7 @@ function CardProfile() {
           onChange={handleChange}
           className="border border-gray-300 rounded py-1 px-2 text-gray-400"
           type="text"
-        placeholder={profile.fullname}
+          placeholder={profile.fullname}
         />
 
         <label className="text-right mr-5">Username :</label>
