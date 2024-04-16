@@ -20,7 +20,7 @@ import ShirtDetail from "../pages/shirt/ShirtDetail"
 // import TestProduct from "../pages/test/TestProduct";
 // import TestProfile from "../pages/test/TestProfile";
 // import TestSlider from "../pages/test/TestSlider";
-import TestTransaction from '../pages/test/TestTransaction';
+// import TestTransaction from '../pages/test/TestTransaction';
 
 
 function RoutePage() {
@@ -77,7 +77,7 @@ function RoutePage() {
           {/* <Route path="/test-product" element={<TestProduct />} /> */}
           {/* <Route path="/test-profile" element={<TestProfile />} /> */}
           {/* <Route path="/test-slider" element={<TestSlider />} /> */}
-          <Route path="/test-transaction" element={<TestTransaction />} />
+          {/* <Route path="/test-transaction" element={<TestTransaction />} /> */}
         </Route>
         <Route element={isNotLogin()}>
           <Route path="/register" element={<AuthRegister />} />
