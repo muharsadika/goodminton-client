@@ -11,7 +11,7 @@ function useCheckout() {
   // snap embed for using window.snap.pay
   useEffect(() => {
     const snapScript = 'https://app.sandbox.midtrans.com/snap/snap.js';
-    const clientKey = import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_LOCALHOST;
+    const clientKey = import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_RENDER;
     const script = document.createElement('script');
     script.src = snapScript;
     script.setAttribute('data-client-key', clientKey);
