@@ -22,7 +22,6 @@ function useCheckout() {
     };
   }, []);
 
-  // get profile
   useEffect(() => {
     dispatch(getProfile())
   }, [dispatch])
@@ -84,32 +83,10 @@ function useCheckout() {
     }
   };
 
-
-  // // handle checkout with midtrans
-  // const handleCheckout = async () => {
-  //   const data = {
-  //     first_name: profile.fullname,
-  //     email: profile.email,
-  //     phone: profile.phone,
-  //     address: profile.address,
-  //     gross_amount: profile.carts.cart_total_price,
-  //   }
-  //   const config = {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //     },
-  //   }
-  //   const response = await axios.post(
-  //     import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_LOCALHOST,
-  //     data,
-  //     config
-  //   )
-  //   const token = response.data.data.token
-  //   window.snap.pay(token)
-  // }
-
-  return { handleCheckout, profile }
+  return {
+    handleCheckout,
+    profile
+  }
 }
 
 export default useCheckout

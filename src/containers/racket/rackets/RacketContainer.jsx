@@ -2,7 +2,6 @@ import CardRacket from "./parts/CardRacket";
 import CardFilter from "./parts/CardFilter";
 import { RacketProvider } from "./RacketContext";
 
-
 function RacketContainer() {
   return (
     <RacketProvider>

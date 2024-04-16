@@ -1,4 +1,3 @@
-// src/redux/rootReducer.js
 import { combineReducers } from '@reduxjs/toolkit';
 import { authSlice } from './slice/authSlice';
 import { profileSlice } from './slice/profileSlice';

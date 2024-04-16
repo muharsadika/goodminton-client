@@ -1,7 +1,6 @@
 import RacketContainer from '../../containers/racket/rackets/RacketContainer'
 import Layout from "../../layout/Layout"
 
-
 function Racket() {
   return (
     <Layout>

@@ -2,9 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useShirt } from '../hook/useShirt';
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 function CardShirtDetail() {
-
   const { id } = useParams();
   const { data: shirt, isLoading, isError } = useShirt(id);
 
@@ -21,7 +19,6 @@ function CardShirtDetail() {
     acc[key.trim()] = value ? value.trim() : '';
     return acc;
   }, {});
-
 
   return (
     <div className="px-32 gap-10 grid grid-rows-1 grid-flow-col">

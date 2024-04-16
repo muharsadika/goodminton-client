@@ -2,7 +2,6 @@ import { useRacketContext } from "../RacketContext";
 import { NumericFormat } from 'react-number-format';
 import { IoIosSearch } from "react-icons/io";
 
-
 function CardFilter() {
 
   const {
@@ -19,7 +18,6 @@ function CardFilter() {
   const handleFilterPriceChange = (setPrice, value) => {
     setPrice(value || 0);
   };
-
 
   return (
     <div className="flex flex-col gap-20 p-5 border rounded min-h-screen">

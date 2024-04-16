@@ -2,9 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useRacket } from '../hook/useRacket';
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 function CardRacketDetail() {
-
   const { id } = useParams();
   const { data: racket, isLoading, isError } = useRacket(id);
 
@@ -21,7 +19,6 @@ function CardRacketDetail() {
     acc[key.trim()] = value ? value.trim() : '';
     return acc;
   }, {});
-
 
   return (
     <div className="px-32 gap-10 grid grid-rows-1 grid-flow-col">

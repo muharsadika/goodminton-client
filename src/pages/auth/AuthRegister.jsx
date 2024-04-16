@@ -1,8 +1,7 @@
 import AuthImage from '../../containers/auth/AuthImage'
 import RegisterForm from '../../containers/auth/register/RegisterForm'
 
-function AuthRegister
-  () {
+function AuthRegister() {
   return (
     <div className="bg-gray-100 flex justify-center items-center h-screen">
       <div className="w-1/2">
@@ -15,5 +14,4 @@ function AuthRegister
   );
 }
 
-export default AuthRegister
-  ;
+export default AuthRegister;

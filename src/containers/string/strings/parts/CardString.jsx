@@ -5,7 +5,6 @@ import { useStringContext } from '../StringContext';
 import { useCart } from '../../../cart/hook/useCart';
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 function CardString() {
   const { data: strings, isLoading, isError } = useStrings();
   const { addToCart } = useCart()
@@ -32,7 +31,6 @@ function CardString() {
   const handleLoadMore = () => {
     setVisibleStrings(prevVisibleStrings => prevVisibleStrings + 6);
   };
-
 
   return (
     <div className="flex flex-col gap-10">

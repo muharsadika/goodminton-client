@@ -5,7 +5,6 @@ import { useRacketContext } from '../RacketContext';
 import { useCart } from '../../../cart/hook/useCart';
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 function CardRacket() {
   const { data: rackets, isLoading, isError } = useRackets();
   const { addToCart } = useCart()
@@ -32,7 +31,6 @@ function CardRacket() {
   const handleLoadMore = () => {
     setVisibleRackets(prevVisibleRackets => prevVisibleRackets + 8);
   };
-
 
   return (
     <div className="flex flex-col">

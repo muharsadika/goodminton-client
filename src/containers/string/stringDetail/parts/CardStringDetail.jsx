@@ -2,9 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useString } from '../hook/useString';
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 function CardStringDetail() {
-
   const { id } = useParams();
   const { data: string, isLoading, isError } = useString(id);
 
@@ -21,7 +19,6 @@ function CardStringDetail() {
     acc[key.trim()] = value ? value.trim() : '';
     return acc;
   }, {});
-
 
   return (
     <div className="px-32 gap-10 grid grid-rows-1 grid-flow-col">

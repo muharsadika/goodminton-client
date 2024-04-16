@@ -5,7 +5,6 @@ import Duora from "./cardDescription/Duora";
 import { useParams } from 'react-router-dom';
 import { useRacket } from "../hook/useRacket";
 
-
 function CardDescription() {
 
   const { id } = useParams();
@@ -20,7 +19,6 @@ function CardDescription() {
     acc[key.trim()] = value ? value.trim() : '';
     return acc;
   }, {});
-
 
   return (
     <div className="flex flex-col px-32 gap-10 mt-20 text-justify">

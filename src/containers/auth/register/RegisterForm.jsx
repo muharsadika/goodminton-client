@@ -3,7 +3,17 @@ import AuthInputForm from '../../auth/AuthInputForm';
 import { useRegister } from '../hooks/useRegister';
 
 function RegisterForm() {
-  const { handleSubmit, username, setUsername, password, setPassword, fullname, setFullname, email, setEmail } = useRegister();
+  const {
+    handleSubmit,
+    username,
+    setUsername,
+    password,
+    setPassword,
+    fullname,
+    setFullname,
+    email,
+    setEmail
+  } = useRegister();
 
   return (
     <div className="w-full p-36 h-screen">

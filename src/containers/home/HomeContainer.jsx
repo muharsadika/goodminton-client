@@ -3,7 +3,6 @@ import CardNewArrival from "./parts/CardNewArrival"
 import CardPlayerCollection from "./parts/CardPlayerCollection"
 import CardSlider from "./parts/CardSlider"
 
-
 function HomeContainer() {
   return (
     <div className="flex flex-col">

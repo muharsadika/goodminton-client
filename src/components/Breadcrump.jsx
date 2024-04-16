@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useRacket } from "../containers/racket/racketDetail/hook/useRacket";
 
-
 function Breadcrump({ link, page }) {
 
   Breadcrump.propTypes = {
@@ -14,7 +13,6 @@ function Breadcrump({ link, page }) {
 
   const { id } = useParams();
   const { data: racket } = useRacket(id);
-
 
   return (
     <div className="text-sm">

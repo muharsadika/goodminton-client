@@ -1,6 +1,5 @@
 import CardProfile from "./parts/CardProfile"
 
-
 function ProfileContainer() {
   return (
     <div>

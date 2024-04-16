@@ -1,9 +1,7 @@
 import { useShirtContext } from '../ShirtContext';
 import { NumericFormat } from 'react-number-format';
 
-
 function CardShirtFilter() {
-
   const {
     filterName,
     setFilterName,
@@ -18,7 +16,6 @@ function CardShirtFilter() {
   const handleFilterPriceChange = (setPrice, value) => {
     setPrice(value || 0);
   };
-
 
   return (
     <div className="flex flex-col gap-10 py-2">

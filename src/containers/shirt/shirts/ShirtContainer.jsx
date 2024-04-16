@@ -2,7 +2,6 @@ import CardShirt from "./parts/CardShirt";
 import CardShirtFilter from "./parts/CardShirtFilter"
 import { ShirtProvider } from "./ShirtContext";
 
-
 function ShirtContainer() {
   return (
     <ShirtProvider>

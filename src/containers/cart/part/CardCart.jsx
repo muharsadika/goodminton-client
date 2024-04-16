@@ -2,59 +2,16 @@ import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { getProfile } from "../../../redux/slice/profileSlice"
 import CardCartItem from "./CardCartItem"
-// import axios from "axios"
 import useCheckout from "../../cart/hook/useCheckout"
-
 
 function CardCart() {
   const profile = useSelector(state => state.profile)
   const dispatch = useDispatch()
+  const { handleCheckout } = useCheckout()
 
-  // get profile
   useEffect(() => {
     dispatch(getProfile())
   }, [dispatch])
-
-  const { handleCheckout } = useCheckout()
-
-  // // snap embed for using window.snap.pay
-  // useEffect(() => {
-  //   const snapScript = 'https://app.sandbox.midtrans.com/snap/snap.js';
-  //   const clientKey = import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_LOCALHOST;
-  //   const script = document.createElement('script');
-  //   script.src = snapScript;
-  //   script.setAttribute('data-client-key', clientKey);
-  //   script.async = true;
-  //   document.body.appendChild(script);
-  //   return () => {
-  //     document.body.removeChild(script);
-  //   };
-  // }, []);
-
-  // // handle checkout with midtrans
-  // const handleCheckout = async () => {
-  //   const data = {
-  //     first_name: profile.fullname,
-  //     email: profile.email,
-  //     phone: profile.phone,
-  //     address: profile.address,
-  //     gross_amount: profile.carts.cart_total_price,
-  //   }
-  //   const config = {
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       Authorization: `Bearer ${localStorage.getItem("token")}`,
-  //     },
-  //   }
-  //   const response = await axios.post(
-  //     import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_LOCALHOST,
-  //     data,
-  //     config
-  //   )
-  //   const token = response.data.data.token
-  //   window.snap.pay(token)
-  // }
-
 
   return (
     <div className="flex flex-row">

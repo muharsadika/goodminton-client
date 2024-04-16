@@ -1,9 +1,7 @@
 import { useStringContext } from '../StringContext';
 import { NumericFormat } from 'react-number-format';
 
-
 function CardStringFilter() {
-
   const {
     filterName,
     setFilterName,
@@ -18,7 +16,6 @@ function CardStringFilter() {
   const handleFilterPriceChange = (setPrice, value) => {
     setPrice(value || 0);
   };
-
 
   return (
     <div className="flex flex-col gap-10 py-2">

@@ -2,7 +2,6 @@ import CardString from "./parts/CardString";
 import CardStringFilter from "./parts/CardStringFilter"
 import { StringProvider } from "./StringContext";
 
-
 function StringContainer() {
   return (
     <StringProvider>

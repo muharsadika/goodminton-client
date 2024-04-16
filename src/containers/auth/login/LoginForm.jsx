@@ -3,7 +3,13 @@ import AuthInputForm from '../../auth/AuthInputForm';
 import { useLogin } from '../hooks/useLogin'
 
 function LoginForm() {
-  const { handleSubmit, username, setUsername, password, setPassword } = useLogin();
+  const {
+    handleSubmit,
+    username,
+    setUsername,
+    password,
+    setPassword
+  } = useLogin();
 
   return (
     <div className="w-full p-36 h-screen">

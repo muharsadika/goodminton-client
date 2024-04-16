@@ -5,9 +5,7 @@ import { useShirtContext } from '../ShirtContext';
 import { useCart } from '../../../cart/hook/useCart';
 import ClipLoader from "react-spinners/ClipLoader";
 
-
 function CardShirt() {
-
   const { data: shirts, isLoading, isError } = useShirts();
   const { addToCart } = useCart()
   const [visibleShirts, setVisibleShirts] = useState(6);
@@ -33,7 +31,6 @@ function CardShirt() {
   const handleLoadMore = () => {
     setVisibleShirts(prevVisibleShirts => prevVisibleShirts + 6);
   };
-
 
   return (
     <div className="flex flex-col gap-10">
