@@ -29,7 +29,7 @@ function Breadcrump({ link, page }) {
           </li>
 
           <li className="flex items-center hover:text-slate-700 font-semibold">
-            {racket && <Link to={`/rackets/${racket.id}`}>{racket.product_name}</Link>}
+            {racket && <Link to={`/category/racket/${racket.id}`}>{racket.product_name}</Link>}
           </li>
         </ol>
       </nav>

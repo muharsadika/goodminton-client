@@ -6,9 +6,11 @@ import { getProfile } from "../redux/slice/profileSlice";
 import { logout } from "../redux/slice/authSlice";
 import { BsCart4 } from "react-icons/bs";
 import { CgProfile } from "react-icons/cg";
+import axios from "axios";
 
 function Navbar() {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
+  const [categoryList, setCategoryList] = useState([]);
   const profile = useSelector((state) => state.profile);
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -16,6 +18,20 @@ function Navbar() {
   useEffect(() => {
     dispatch(getProfile());
   }, [dispatch])
+
+  useEffect(() => {
+    const fetchCategoryList = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/api/admin/auth/get-categories");
+        setCategoryList(response.data.data);
+      } catch (error) {
+        console.log("Error fetching category list:", error);
+      }
+    }
+
+    fetchCategoryList();
+  }, [])
+
 
   const handleLogout = () => {
     dispatch(logout());
@@ -44,13 +60,17 @@ function Navbar() {
           </Link>
         </div>
 
-        <div className="w-[50%] flex justify-center">
+        <div className="w-[50%] flex flex-col justify-center items-center">
+          <div className="menu menu-horizontal gap-10 mb-[-5px] text-lg font-medium">
+            <Link to={`/all-item`} className="hover:text-gray-500">ALL PRODUCTS</Link>
+          </div>
+
           <div className="menu menu-horizontal gap-10 text-lg font-extralight">
-            <Link to="/rackets" className="hover:text-gray-500">RACKETS</Link>
-            <Link to="/#" className="hover:text-gray-500">STRINGS</Link>
-            <Link to="/#" className="hover:text-gray-500">BAGS</Link>
-            <Link to="/#" className="hover:text-gray-500">SHIRTS</Link>
-            <Link to="/#" className="hover:text-gray-500">SHOES</Link>
+            {categoryList.map((category) => (
+              <Link to={`/category/${category.category_name}`} key={category.id} className="uppercase hover:text-gray-500">
+                {category.category_name}
+              </Link>
+            ))}
           </div>
         </div>
 
