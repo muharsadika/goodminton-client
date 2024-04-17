@@ -10,6 +10,8 @@ import AuthLogin from "../pages/auth/AuthLogin";
 import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile"
 import Cart from "../pages/cart/Cart"
+import Items from "../pages/allItem/Items"
+import ItemDetail from "../pages/allItem/ItemDetail"
 import Racket from "../pages/racket/Racket";
 import RacketDetail from "../pages/racket/RacketDetail";
 import String from "../pages/string/String";
@@ -66,12 +68,14 @@ function RoutePage() {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/rackets" element={<Racket />} />
-          <Route path="/rackets/:id" element={<RacketDetail />} />
-          <Route path="/strings" element={<String />} />
-          <Route path="/strings/:id" element={<StringDetail />} />
-          <Route path="/shirts" element={<Shirt />} />
-          <Route path="/shirt/:id" element={<ShirtDetail />} />
+          <Route path="/all-item" element={<Items />} />
+          <Route path="/all-item/:id" element={<ItemDetail />} />
+          <Route path="/category/racket" element={<Racket />} />
+          <Route path="/category/racket/:id" element={<RacketDetail />} />
+          <Route path="/category/string" element={<String />} />
+          <Route path="/category/string/:id" element={<StringDetail />} />
+          <Route path="/category/shirt" element={<Shirt />} />
+          <Route path="/category/shirt/:id" element={<ShirtDetail />} />
 
           {/* <Route path="/test-product" element={<TestProduct />} /> */}
           {/* <Route path="/test-profile" element={<TestProfile />} /> */}

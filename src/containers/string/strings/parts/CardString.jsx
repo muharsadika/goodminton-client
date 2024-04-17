@@ -45,7 +45,7 @@ function CardString() {
           return (
             <div key={index} className="flex flex-col gap-3 border rounded-xl">
               <div className="flex justify-center">
-                <Link to={`/strings/${string.id}`} key={index}>
+                <Link to={`/category/string/${string.id}`} key={index}>
                   <img src={string.product_image_1} alt={string.product_name} className="w-72" />
                 </Link>
               </div>

@@ -46,7 +46,7 @@ function CardRacket() {
           return (
             <div key={index} className="flex flex-col gap-3">
               <div className="flex justify-center">
-                <Link to={`/rackets/${racket.id}`} key={index}>
+                <Link to={`/category/racket/${racket.id}`} key={index}>
                   <img src={racket.product_image_1} alt={racket.product_name} className="w-60 hover:scale-105" />
                 </Link>
               </div>
@@ -54,7 +54,7 @@ function CardRacket() {
               <div className="uppercase flex flex-col m-auto text-justify gap-1 text-md py-3">
                 <p className="text-md font-bold">{racket.product_name} <span className="text-sm font-thin text-gray-500">({racket.product_quantity})</span></p>
                 <p className="text-xs italic">{color}</p>
-                <p className="text-sm mt-3" style={{ fontFamily: 'fantasy' }}>Rp {racket.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</p>
+                <p className="text-sm mt-2" style={{ fontFamily: 'fantasy' }}>Rp {racket.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</p>
               </div>
 
               <div className='flex flex-row w-full'>

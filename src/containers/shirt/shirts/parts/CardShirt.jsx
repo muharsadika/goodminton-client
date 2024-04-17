@@ -45,7 +45,7 @@ function CardShirt() {
           return (
             <div key={index} className="flex flex-col gap-3 border rounded-xl">
               <div className="flex justify-center">
-                <Link to={`/shirts/${shirt.id}`} key={index}>
+                <Link to={`/category/shirt/${shirt.id}`} key={index}>
                   <img src={shirt.product_image_1} alt={shirt.product_name} className="w-72" />
                 </Link>
               </div>

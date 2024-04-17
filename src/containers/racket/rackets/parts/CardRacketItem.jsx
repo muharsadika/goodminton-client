@@ -18,7 +18,7 @@ function CardRacketItem({ racket }) {
   return (
     <div className="flex flex-col gap-3 border rounded-xl">
       <div className="flex justify-center">
-        <Link to={`/rackets/${racket.id}`}>
+        <Link to={`/category/racket/${racket.id}`}>
           <img src={racket.product_image_1} alt={racket.product_name} className="w-72" />
         </Link>
       </div>
