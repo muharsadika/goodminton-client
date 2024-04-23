@@ -25,6 +25,7 @@ dist-ssr
 
 src/assets
 src/pages/test
+src/containers/test
 note.txt
 .env
 _unused
