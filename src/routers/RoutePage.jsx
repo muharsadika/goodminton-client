@@ -10,18 +10,10 @@ import AuthLogin from "../pages/auth/AuthLogin";
 import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile"
 import Cart from "../pages/cart/Cart"
-import Items from "../pages/allItem/Items"
-import ItemDetail from "../pages/allItem/ItemDetail"
-import Racket from "../pages/racket/Racket";
-import RacketDetail from "../pages/racket/RacketDetail";
-import String from "../pages/string/String";
-import StringDetail from "../pages/string/StringDetail";
-import Shirt from "../pages/shirt/Shirt"
-import ShirtDetail from "../pages/shirt/ShirtDetail"
-// import TestProduct from "../pages/test/TestProduct";
-// import TestProfile from "../pages/test/TestProfile";
-// import TestSlider from "../pages/test/TestSlider";
-// import TestTransaction from '../pages/test/TestTransaction';
+
+import AllProducts from "../pages/_products/AllProducts/AllProducts"
+import Rackets from "../pages/_products/rackets/Rackets"
+import Strings from "../pages/_products/strings/Strings"
 
 
 function RoutePage() {
@@ -59,28 +51,13 @@ function RoutePage() {
   return (
     <>
       <Routes>
-        {/* <Route path="/" element={isLogin()}> */}
-        {/* jika menggunakan path pada isLogin() 
-        maka pengecekan berjalan ketika user menavigasi ke route "/" 
-        tapi jika tanpa path, pengecekan dilakukan ke semua route*/}
-
         <Route element={isLogin()}>
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/all-item" element={<Items />} />
-          <Route path="/all-item/:id" element={<ItemDetail />} />
-          <Route path="/category/racket" element={<Racket />} />
-          <Route path="/category/racket/:id" element={<RacketDetail />} />
-          <Route path="/category/string" element={<String />} />
-          <Route path="/category/string/:id" element={<StringDetail />} />
-          <Route path="/category/shirt" element={<Shirt />} />
-          <Route path="/category/shirt/:id" element={<ShirtDetail />} />
-
-          {/* <Route path="/test-product" element={<TestProduct />} /> */}
-          {/* <Route path="/test-profile" element={<TestProfile />} /> */}
-          {/* <Route path="/test-slider" element={<TestSlider />} /> */}
-          {/* <Route path="/test-transaction" element={<TestTransaction />} /> */}
+          <Route path="/all-products" element={<AllProducts />} />
+          <Route path="/category/racket" element={<Rackets />} />
+          <Route path="/category/string" element={<Strings />} />
         </Route>
         <Route element={isNotLogin()}>
           <Route path="/register" element={<AuthRegister />} />
