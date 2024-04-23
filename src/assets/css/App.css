@@ -35,6 +35,24 @@
   color: red; /* Adjust the color to match text-gray-300 */
 }
 
+.navbar-active-category {
+  position: relative;
+}
+
+.navbar-active-category:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: gray; /* Warna garis bawah */
+}
+
+.navbar-inactive-category {
+  /* Gaya kategori yang tidak aktif */
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
