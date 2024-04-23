@@ -63,7 +63,7 @@ export function useProfileUpdate() {
         formData.append(key, formValues[key]);
       });
 
-      await API.patch("buyer/auth/update-profile", formValues, {
+      await API.patch("/buyer/auth/update-profile", formValues, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'multipart/form-data'

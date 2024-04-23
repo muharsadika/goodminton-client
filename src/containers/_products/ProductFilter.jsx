@@ -1,15 +1,14 @@
-import { useRacketContext } from "../RacketContext";
+import { useProductContext } from "./hooks/ProductContext";
 import { NumericFormat } from 'react-number-format';
 import { IoIosSearch } from "react-icons/io";
 
-function CardFilter() {
-
+function ProductFilter() {
   const {
     filterName,
     setFilterName,
     setMinPrice,
     setMaxPrice,
-  } = useRacketContext();
+  } = useProductContext();
 
   const handleFilterNameChange = (event) => {
     setFilterName(event.target.value);
@@ -20,22 +19,25 @@ function CardFilter() {
   };
 
   return (
-    <div className="flex flex-col gap-20 p-5 border rounded min-h-screen">
-      <div className="flex gap-3 relative">
-        <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-          <span className="text-lg text-gray-300"><IoIosSearch /></span>
+    <div className="flex flex-col h-full bg-gray-50 gap-20 py-10 px-10">
+      <div className="flex flex-col gap-1">
+        <label className="text-lg font-semibold upper">Search</label>
+        <div className="flex gap-3 relative">
+          <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <span className="text-lg text-gray-300"><IoIosSearch /></span>
+          </div>
+          <input
+            type="text"
+            placeholder="Search..."
+            value={filterName}
+            onChange={handleFilterNameChange}
+            className="border rounded-md py-1 pl-10 pr-20 w-full text-gray-500 focus:outline-none focus:border-gray-300 hover:shadow-inner"
+          />
         </div>
-        <input
-          type="text"
-          placeholder="Search..."
-          value={filterName}
-          onChange={handleFilterNameChange}
-          className="border rounded-md py-1.5 pl-10 pr-20 w-full text-gray-500 focus:outline-none focus:border-gray-300 hover:shadow-inner"
-        />
       </div>
 
       <div className="flex flex-col gap-1">
-        <label className="text-lg font-medium text-center">Price</label>
+        <label className="text-lg font-semibold">Price</label>
         <div className="flex flex-col gap-1">
           <div className="relative rounded-md shadow-sm">
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
@@ -44,12 +46,12 @@ function CardFilter() {
             <NumericFormat
               thousandSeparator={'.'}
               decimalSeparator={','}
-              placeholder="Min"
+              placeholder="0 (Min)"
               onValueChange={(values) => {
                 const { value } = values;
                 handleFilterPriceChange(setMinPrice, value);
               }}
-              className="border rounded-lg w-full py-1.5 pl-10 pr-20 text-gray-500 focus:outline-none focus:border-gray-300 hover:shadow-inner"
+              className="border rounded-lg w-full py-1 pl-10 pr-20 text-gray-500 focus:outline-none focus:border-gray-300 hover:shadow-inner"
             />
           </div>
 
@@ -60,7 +62,7 @@ function CardFilter() {
             <NumericFormat
               thousandSeparator={'.'}
               decimalSeparator={','}
-              placeholder="Max"
+              placeholder="0 (Max)"
 
               onValueChange={(values) => {
                 const { value } = values;
@@ -76,4 +78,4 @@ function CardFilter() {
   );
 }
 
-export default CardFilter;
+export default ProductFilter;

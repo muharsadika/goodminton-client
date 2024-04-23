@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import axios from 'axios';
 import Swal from 'sweetalert2';
+import { API } from '../../../utils/API';
 
 export function useCart() {
   const [loading, setLoading] = useState(false);
@@ -10,8 +10,7 @@ export function useCart() {
     setLoading(true);
     setError(null);
     try {
-      // const response = await axios.post(`${import.meta.env.VITE_REACT_APP_API_LOCALHOST}/buyer/auth/add-cart`, {
-      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_API_RENDER}/buyer/auth/add-cart`, {
+      const response = await API.post(`/buyer/auth/add-cart`, {
         product_id: productId,
         product_quantity: quantity
       }, {
@@ -43,8 +42,7 @@ export function useCart() {
       });
 
       if (confirmation.isConfirmed) {
-        // const response = await axios.delete(`${import.meta.env.VITE_REACT_APP_API_LOCALHOST}/buyer/auth/delete-cart/${cartId}`, {
-        const response = await axios.delete(`${import.meta.env.VITE_REACT_APP_API_RENDER}/buyer/auth/delete-cart/${cartId}`, {
+        const response = await API.delete(`/buyer/auth/delete-cart/${cartId}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
