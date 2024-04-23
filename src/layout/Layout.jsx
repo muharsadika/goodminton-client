@@ -1,28 +1,31 @@
 import PropTypes from "prop-types";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import UpperNavbar from "../components/UpperNavbar";
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
   noPadding: PropTypes.bool
 };
 
-function Layout({ children, noPadding }) {
-  const paddingClass = noPadding ? "" : "p-[40px]";
-
+function Layout({ children }) {
   return (
-    <div className="flex flex-col justify-center items-center w-full">
-      <div className="w-full fixed top-0 left-0 right-0 z-10" >
-        <Navbar />
-      </div>
+    <div className="flex flex-col justify-center items-center">
+      <>
+        <UpperNavbar />
+      </>
 
-      <div className={`w-full min-h-screen mt-[84px] ${paddingClass}`}>
+      <>
+        <Navbar />
+      </>
+
+      <div className='w-screen min-h-screen'>
         {children}
       </div>
 
-      <div className="w-full">
+      <>
         <Footer />
-      </div>
+      </>
     </div >
   );
 }
