@@ -10,11 +10,9 @@ import AuthLogin from "../pages/auth/AuthLogin";
 import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile"
 import Cart from "../pages/cart/Cart"
-
 import AllProducts from "../pages/_products/AllProducts/AllProducts"
 import Rackets from "../pages/_products/rackets/Rackets"
 import Strings from "../pages/_products/strings/Strings"
-
 
 function RoutePage() {
   const [token, setToken] = useState(localStorage.getItem("token"));
