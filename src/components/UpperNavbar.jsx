@@ -1,7 +1,7 @@
 function UpperNavbar() {
   return (
     <div className="w-screen">
-      <div className="flex flex-row h-5 bg-[#ececec] px-5 items-center">
+      <div className="flex flex-row bg-[#ececec] px-5 items-center">
         <div className="flex-1"></div>
         <div className="flex-1 flex justify-center">
           <p className="text-xs">GOODMINTON - WE SERVE THE BEST!</p>
