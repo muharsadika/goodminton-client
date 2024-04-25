@@ -11,7 +11,10 @@ import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile"
 import Cart from "../pages/cart/Cart"
 import AllProducts from "../pages/_products/allProducts/AllProducts"
+import Bags from "../pages/_products/bags/Bags"
 import Rackets from "../pages/_products/rackets/Rackets"
+import Shirts from "../pages/_products/shirts/Shirts"
+import Shoes from "../pages/_products/shoes/Shoes"
 import Strings from "../pages/_products/strings/Strings"
 
 function RoutePage() {
@@ -54,7 +57,10 @@ function RoutePage() {
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/all-products" element={<AllProducts />} />
+          <Route path="/category/bag" element={<Bags />} />
           <Route path="/category/racket" element={<Rackets />} />
+          <Route path="/category/shirt" element={<Shirts />} />
+          <Route path="/category/shoes" element={<Shoes />} />
           <Route path="/category/string" element={<Strings />} />
         </Route>
         <Route element={isNotLogin()}>
