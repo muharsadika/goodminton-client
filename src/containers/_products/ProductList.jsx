@@ -17,7 +17,7 @@ function ProductList({ category, product, addToCart }) {
         </Link>
       </div>
 
-      <div className="uppercase flex flex-col m-auto text-justify text-md">
+      <div className="uppercase flex flex-col mx-10 text-md">
         <p className="text-md font-bold">{product.product_name} <span className="text-sm font-thin text-gray-500">({product.product_quantity})</span></p>
         <p className="text-xs italic">{color}</p>
         <p className="text-sm mt-2" style={{ fontFamily: 'fantasy' }}>Rp {product.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</p>

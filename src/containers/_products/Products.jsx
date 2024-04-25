@@ -1,6 +1,9 @@
 import { useAllProducts } from './hooks/useAllProduct';
 import { useRackets } from './hooks/useRacket';
 import { useStrings } from './hooks/useString';
+import { useShoes } from './hooks/useShoes'
+import { useShirts } from './hooks/useShirt'
+import  { useBags } from './hooks/useBag'
 import { useCart } from '../cart/hook/useCart';
 import ClipLoader from "react-spinners/ClipLoader";
 import ProductList from './ProductList';
@@ -12,8 +15,11 @@ function Product({ category }) {
   const { data: allProducts, isLoading: productsLoading, isError: productsError } = useAllProducts();
   const { data: rackets, isLoading: racketsLoading, isError: racketsError } = useRackets("racket");
   const { data: strings, isLoading: stringsLoading, isError: stringsError } = useStrings("string");
-  const isLoading = productsLoading || racketsLoading || stringsLoading;
-  const isError = productsError || racketsError || stringsError;
+  const { data: shirts, isLoading: shirtsLoading, isError: shirtsError } = useShirts("shirt");
+  const { data: bags, isLoading: bagsLoading, isError: bagsError } = useBags("bag");
+  const { data: shoes, isLoading: shoesLoading, isError: shoesError } = useShoes("shoes");
+  const isLoading = productsLoading || racketsLoading || stringsLoading || shoesLoading || shirtsLoading || bagsLoading;
+  const isError = productsError || racketsError || stringsError || shoesError || shirtsError || bagsError;
   const { addToCart } = useCart();
   const { filterName, minPrice, maxPrice } = useProductContext();
   const [visibleProducts, setVisibleProducts] = useState(8);
@@ -22,14 +28,11 @@ function Product({ category }) {
     allProducts: allProducts,
     rackets: rackets,
     strings: strings,
+    shoes: shoes,
+    shirts: shirts,
+    bags: bags
   };
   const products = categoryList[category] || [];
-
-  // const filteredProducts = products.filter(product =>
-  //   product.product_name.toLowerCase().includes(filterName.toLowerCase()) &&
-  //   (minPrice === 0 || product.product_price >= Number(minPrice)) &&
-  //   (maxPrice === 0 || product.product_price <= Number(maxPrice))
-  // );
 
   const filteredProducts = products.filter(product => {
     const productNameMatch = product.product_name.toLowerCase().includes(filterName.toLowerCase());
@@ -39,7 +42,6 @@ function Product({ category }) {
 
     return (productNameMatch || productPriceMatch) && (productMinPriceMatch && productMaxPriceMatch);
   });
-
 
   const remainingProducts = filteredProducts.length - visibleProducts;
   const handleLoadMore = () => {
@@ -60,9 +62,15 @@ function Product({ category }) {
     <div className="flex flex-col py-10">
       <div className="text-5xl font-semibold mb-20 uppercase">
         <p>
-          {products[0].brand.brand_name} {category === 'rackets' ? 'Rackets' : 'Strings'}
+          {products[0].brand.brand_name}
+          {" "}
+          {category === "rackets" ? "Rackets"
+            : category === "strings" ? "Strings"
+              : category === "allProducts" ? "Products"
+                : "Other Category"}
         </p>
       </div>
+
 
       <div className="grid grid-cols-4 gap-y-20">
         {filteredProducts.slice(0, visibleProducts).map(product => (
