@@ -56,7 +56,7 @@ function useCheckout() {
       };
       try {
         const response = await axios.post(
-          import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_LOCALHOST,
+          import.meta.env.VITE_REACT_APP_MIDTRANS_PAYMET_API_RENDER,
           data,
           config
         );
