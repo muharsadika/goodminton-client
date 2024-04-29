@@ -11,6 +11,7 @@ import Home from "../pages/home/Home";
 import Profile from "../pages/profile/Profile"
 import Cart from "../pages/cart/Cart"
 import AllProducts from "../pages/_products/allProducts/AllProducts"
+import AllProductDetail from '../pages/_products/allProducts/AllProductDetail';
 import Bags from "../pages/_products/bags/Bags"
 import Rackets from "../pages/_products/rackets/Rackets"
 import Shirts from "../pages/_products/shirts/Shirts"
@@ -56,6 +57,7 @@ function RoutePage() {
           <Route path="/" element={<Home />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/category/:category/:id" element={<AllProductDetail />} />
           <Route path="/all-products" element={<AllProducts />} />
           <Route path="/category/bag" element={<Bags />} />
           <Route path="/category/racket" element={<Rackets />} />
