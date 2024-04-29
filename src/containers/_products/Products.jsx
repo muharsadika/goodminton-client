@@ -3,7 +3,7 @@ import { useRackets } from './hooks/useRacket';
 import { useStrings } from './hooks/useString';
 import { useShoes } from './hooks/useShoes'
 import { useShirts } from './hooks/useShirt'
-import  { useBags } from './hooks/useBag'
+import { useBags } from './hooks/useBag'
 import { useCart } from '../cart/hook/useCart';
 import ClipLoader from "react-spinners/ClipLoader";
 import ProductList from './ProductList';
@@ -25,12 +25,12 @@ function Product({ category }) {
   const [visibleProducts, setVisibleProducts] = useState(8);
 
   const categoryList = {
-    allProducts: allProducts,
-    rackets: rackets,
-    strings: strings,
+    allProduct: allProducts,
+    racket: rackets,
+    string: strings,
     shoes: shoes,
-    shirts: shirts,
-    bags: bags
+    shirt: shirts,
+    bag: bags
   };
   const products = categoryList[category] || [];
 
@@ -64,10 +64,13 @@ function Product({ category }) {
         <p>
           {products[0].brand.brand_name}
           {" "}
-          {category === "rackets" ? "Rackets"
-            : category === "strings" ? "Strings"
-              : category === "allProducts" ? "Products"
-                : "Other Category"}
+          {category === "racket" ? "Rackets"
+            : category === "string" ? "Strings"
+              : category === "allProduct" ? "Products"
+                : category === "shoes" ? "Shoes"
+                  : category === "bag" ? "Bags"
+                    : category === "shirt" ? "Shirts"
+                      : "Other Category"}
         </p>
       </div>
 

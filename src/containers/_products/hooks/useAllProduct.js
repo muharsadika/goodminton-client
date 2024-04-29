@@ -17,3 +17,19 @@ export const useAllProducts = () => {
     queryFn: () => fetchAllProducts(),
   });
 };
+
+const fetchProduct = async (id) => {
+  const response = await API.get(`admin/auth/get-product/${id}`, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+  });
+  return response.data.data;
+};
+
+export const useProduct = (id) => {
+  return useQuery({
+    queryKey: ['product', id],
+    queryFn: () => fetchProduct(id),
+  });
+};

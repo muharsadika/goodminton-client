@@ -10,7 +10,7 @@ function ProductList({ category, product, addToCart }) {
   color = color ? color.replace('Color:', '') : '';
 
   return (
-    <div className="flex flex-col gap-2 justify-center items-center">
+    <div className="flex flex-col gap-2 py-5 mx-1 justify-center items-center hover:shadow-lg hover:shadow-gray-300 hover:border rounded-xl">
       <div>
         <Link to={`/category/${category}/${product.id}`}>
           <img src={product.product_image_1} alt={product.product_name} className="w-60 hover:scale-105" />
@@ -18,25 +18,27 @@ function ProductList({ category, product, addToCart }) {
       </div>
 
       <div className="uppercase flex flex-col mx-10 text-md">
-        <p className="text-md font-bold">{product.product_name} <span className="text-sm font-thin text-gray-500">({product.product_quantity})</span></p>
+        <Link to={`/category/${category}/${product.id}`}>
+        <p className="text-md font-bold w-[105%]">{product.product_name} <span className="text-sm font-thin text-gray-500">({product.product_quantity})</span></p>
+        </Link>
         <p className="text-xs italic">{color}</p>
         <p className="text-sm mt-2" style={{ fontFamily: 'fantasy' }}>Rp {product.product_price.toLocaleString('id-ID', { minimumFractionDigits: 0 })}</p>
       </div>
 
-      <div className='flex flex-row w-3/4'>
+      <div className='flex flex-row w-3/4 gap-1'>
         <div className="w-full">
           <input
             type="number"
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
-            className="border border-gray-200 rounded-xl text-center text-md text-gray-400 px-5 w-full focus:outline-none focus:border-gray-400 hover:shadow-inner" 
+            className="w-full border border-gray-200 rounded-xl text-md text-center text-gray-400 focus:outline-none focus:border-gray-400 hover:shadow-xl" 
             />
         </div>
 
         <div className="w-full">
           <button
             onClick={() => addToCart(product.id, Number(quantity))}
-            className="border rounded-xl text-center text-white text-xs py-1 px-5 w-full bg-[#222] hover:bg-gray-700 hover:mt-0.5"
+            className="w-full py-1 border rounded-xl text-white text-xs text-center bg-[#222] hover:shadow-lg"
           >
             Add to Cart
           </button>
