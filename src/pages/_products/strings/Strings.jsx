@@ -12,7 +12,7 @@ function Strings() {
             <ProductFilter />
           </div>
           <div className="w-[80%]">
-            <Product category="strings" />
+            <Product category="string" />
           </div>
         </div>
       </ProductProvider>

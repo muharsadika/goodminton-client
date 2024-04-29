@@ -12,7 +12,7 @@ function Bags() {
             <ProductFilter />
           </div>
           <div className="w-[80%]">
-            <Product category="bags" />
+            <Product category="bag" />
           </div>
         </div>
       </ProductProvider>

@@ -12,7 +12,7 @@ function Shirts() {
             <ProductFilter />
           </div>
           <div className="w-[80%]">
-            <Products category="shirts" />
+            <Products category="shirt" />
           </div>
         </div>
       </ProductProvider>

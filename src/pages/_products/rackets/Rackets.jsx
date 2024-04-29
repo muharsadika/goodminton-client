@@ -12,7 +12,7 @@ function Rackets() {
             <ProductFilter />
           </div>
           <div className="w-[80%]">
-            <Products category="rackets" />
+            <Products category="racket" />
           </div>
         </div>
       </ProductProvider>
