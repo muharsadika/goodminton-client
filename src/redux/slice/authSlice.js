@@ -16,20 +16,38 @@ export const login = createAsyncThunk(
       username,
       password,
     });
+    // console.log(response.data);
     return response.data;
   }
 );
 
 export const register = createAsyncThunk(
   'auth/register',
-  async ({ fullname, email, username, password }) => {
-    const response = await API.post('/buyer/register', {
-      fullname,
-      email,
-      username,
-      password,
-    });
-    return response.data;
+  async ({ fullname, email, username, password }, thunkAPI) => {
+    try {
+      const response = await API.post('/buyer/register', {
+        fullname,
+        email,
+        username,
+        password,
+      })
+
+      return response.data
+    }catch(error){
+      if(error.response && error.response.data) {
+        return thunkAPI.rejectWithValue(error.response.data)
+      } else {
+        return thunkAPI.rejectWithValue({ error: error.message })
+      }
+    }
+    // const response = await API.post('/buyer/register', {
+    //   fullname,
+    //   email,
+    //   username,
+    //   password,
+    // });
+    // // console.log(response.data);
+    // return response.data;
   }
 );
 
@@ -58,6 +76,7 @@ export const authSlice = createSlice({
         state.error = null;
       })
       .addCase(login.rejected, (state, action) => {
+        console.log(action);
         state.status = 'failed';
         state.error = action.error.message;
       });
@@ -77,8 +96,9 @@ export const authSlice = createSlice({
       })
 
       .addCase(register.rejected, (state, action) => {
+        console.log(action);
         state.status = 'failed';
-        state.error = action.error.message;
+        state.error = action.payload.error;
       });
 
     builder
