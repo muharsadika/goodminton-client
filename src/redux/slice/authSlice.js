@@ -46,7 +46,9 @@ const initialState = {
     id: '',
     email: '',
     fullname: '',
-    status: 'idle',
+    message: '',
+    isLoading: true,
+    isError: false,
     error: null,
 };
 
@@ -57,56 +59,66 @@ export const authSlice = createSlice({
     extraReducers: (builder) => {
         builder
             .addCase(login.pending, (state) => {
-                state.status = 'loading';
+                state.isLoading = true;
+                state.isError = false;
+                state.error = null;
             })
             .addCase(login.fulfilled, (state, action) => {
                 // console.log(action.payload);
-                const { id, email, fullname, token } = action.payload;
-                localStorage.setItem('token', token);
-                state.status = 'succeeded';
-                state.id = id;
-                state.email = email;
-                state.fullname = fullname;
+                localStorage.setItem('token', action.payload.token);
+                state.isLoading = false;
+                state.isError = false;
                 state.error = null;
+                state.id = action.payload.id;
+                state.email = action.payload.email;
+                state.fullname = action.payload.fullname;
+                state.message = action.payload.message;
             })
             .addCase(login.rejected, (state, action) => {
                 // console.log(`action`, action);
                 // console.log(`action.payload`, action.payload);
-                state.status = 'failed';
+                state.isLoading = false;
+                state.isError = true;
                 state.error = action.payload;
             });
 
         builder
             .addCase(register.pending, (state) => {
-                state.status = 'loading';
+                state.isLoading = true;
+                state.isError = false;
+                state.error = null;
             })
             .addCase(register.fulfilled, (state, action) => {
                 // console.log(action.payload);
-                const { id, email, fullname, username } = action.payload;
-                state.status = 'succeeded';
-                state.id = id;
-                state.email = email;
-                state.fullname = fullname;
-                state.username = username;
+                state.isLoading = false;
+                state.isError = false;
                 state.error = null;
+                state.id = action.payload.id;
+                state.email = action.payload.email;
+                state.fullname = action.payload.fullname;
+                state.username = action.payload.username;
             })
 
             .addCase(register.rejected, (state, action) => {
                 // console.log(action.payload);
-                state.status = 'failed';
+                state.isLoading = false;
+                state.isError = true;
                 state.error = action.payload;
             });
 
         builder
             .addCase(logout.pending, (state) => {
-                state.status = 'loading';
+                state.isLoading = true;
+                state.isError = false;
+                state.error = null;
             })
             .addCase(logout.fulfilled, (state) => {
-                state.status = 'idle';
+                state.isLoading = false;
+                state.isError = false;
+                state.error = null;
                 state.id = '';
                 state.email = '';
                 state.fullname = '';
-                state.error = null;
             });
     },
 });
