@@ -41,7 +41,7 @@ export const removeProductFromCart = createAsyncThunk(
 );
 
 // Slice keranjang
-export const cartSlice = createSlice({
+const cartSlice = createSlice({
   name: 'cart',
   initialState: [],
   reducers: {},
@@ -61,4 +61,4 @@ export const cartSlice = createSlice({
   },
 });
 
-// export const { actions, reducer } = cartSlice;
+export default cartSlice.reducer;
