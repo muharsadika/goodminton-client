@@ -1,56 +1,49 @@
-import { Link } from 'react-router-dom';
+import useLogin from '../hooks/useLogin';
 import AuthInputForm from '../../auth/AuthInputForm';
-import { useLogin } from '../hooks/useLogin'
+import { Link } from 'react-router-dom';
 
-function LoginForm() {
-  const {
-    handleSubmit,
-    username,
-    setUsername,
-    password,
-    setPassword
-  } = useLogin();
+const LoginForm = () => {
+    const { onSubmit, username, setUsername, password, setPassword, isLoading } =
+        useLogin();
 
-  return (
-    <div className="w-full p-36 h-screen">
-      <h1 className="text-2xl font-semibold mb-4">Login</h1>
-      <form onSubmit={handleSubmit}>
-        <AuthInputForm
-          label="Username"
-          type="text"
-          id="username"
-          name="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <AuthInputForm
-          label="Password"
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <div className="mb-6 text-blue-500">
-          <Link to="#" className="hover:underline">
-            Forgot Password?
-          </Link>
+    return (
+        <div className="p-20 md:p-20 lg:p-48 h-screen flex flex-col justify-center items-center">
+            <h1 className="text-2xl font-semibold mb-4">Login</h1>
+            <form onSubmit={onSubmit} className="w-full max-w-md">
+                <AuthInputForm
+                    label="Username"
+                    type="text"
+                    id="username"
+                    name="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+
+                <AuthInputForm
+                    label="Password"
+                    type="password"
+                    id="password"
+                    name="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+
+                <div className="mb-6 text-blue-500">
+                    <Link to="#" className="hover:underline">
+                        Forgot Password?
+                    </Link>
+                </div>
+
+                <button
+                    type="submit"
+                    disabled={isLoading}
+                    className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
+                >
+                    {isLoading ? 'Loading...' : 'Login'}
+                </button>
+            </form>
         </div>
-        <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full"
-        >
-          Login
-        </button>
-      </form>
-      <div className="mt-6 text-center">
-        <p>Don’t have an account?</p>
-        <Link to="/register" className="hover:underline text-blue-500">
-          Sign up Here
-        </Link>
-      </div>
-    </div>
-  );
-}
+    );
+};
 
 export default LoginForm;
