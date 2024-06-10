@@ -47,7 +47,7 @@ const initialState = {
     email: '',
     fullname: '',
     message: '',
-    isLoading: true,
+    isLoading: false,
     isError: false,
     error: null,
 };

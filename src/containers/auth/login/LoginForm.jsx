@@ -3,8 +3,14 @@ import AuthInputForm from '../../auth/AuthInputForm';
 import { Link } from 'react-router-dom';
 
 const LoginForm = () => {
-    const { onSubmit, username, setUsername, password, setPassword, isLoading } =
-        useLogin();
+    const {
+        onSubmit,
+        username,
+        setUsername,
+        password,
+        setPassword,
+        isLoading,
+    } = useLogin();
 
     return (
         <div className="p-20 md:p-20 lg:p-48 h-screen flex flex-col justify-center items-center">
